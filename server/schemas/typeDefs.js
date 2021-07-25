@@ -6,6 +6,13 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    location: Int
+    age: Int
+    gender: String
+    bio: String
+    snapchat: String
+    instagram: String
+    phoneNumber: Int
     activities: [Activities]
   }
   type Activities {
