@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const Activities = require('./Activities');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
@@ -24,35 +24,36 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  Location: {
+  location: {
     type: Number,
     required: true,
   },
-  Age: {
+  age: {
     type: Number,
     required: false,
   },
-  Gender: {
+  gender: {
     type: String,
     enum: ["Male", "Female", "Non-Binary"],
     required: false,
   },
-  Bio: {
+  bio: {
     type: String,
     required: false,
   },
-  Snapchat: {
+  snapchat: {
     type: String,
     required: false,
   },
-  Instagram: {
+  instagram: {
     type: String,
     required: false,
   },
-  PhoneNumber: {
+  phoneNumber: {
     type: Number,
     required: false,
   },
+  activities: [Activities.schema],
 });
 
 // set up pre-save middleware to create password
