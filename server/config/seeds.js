@@ -96,98 +96,196 @@ db.once('open', async () => {
     firstname: "Rafeal",
     lastname: "Boardbottom",
     email: "BottomB@yahoo.com",
-    password: "Started@Dabottom2"
+    password: "Started@Dabottom2",
+    location: 23221,
+    age: 56,
+    gender: "Male",
+    bio: "Board is life!",
+    snapchat: "boardmangetspaid",
+    instagram: "boardmangetspaid",
+    phoneNumber: 8045551111
   },
   {
     username: "Kevin99" ,
     firstname: "Kevin",
     lastname: "Kandistidious",
     email: "StudiousK@gmail.com",
-    password: "#Kevin400"
+    password: "#Kevin400",
+    location: 23832,
+    age: 33,
+    gender: "Male",
+    bio: "Kevin. That is all.",
+    snapchat: "ItsKevin",
+    instagram: "ItsKevin",
+    phoneNumber: 8045550956
   },
   {
     username: "McLuvin" ,
     firstname: "Marlon",
     lastname: "Davidson",
     email: "DavidsonM@aol.com",
-    password: "#Cash69Money"
+    password: "#Cash69Money",
+    location: 23832,
+    age: 52,
+    gender: "Non-Binary",
+    bio: "Believe in yourself",
+    snapchat: "inspire69",
+    instagram: "inspire69",
+    phoneNumber: 8045555671
   },
   {
     username: "Rod00" ,
     firstname: "Rodney",
     lastname: "Redwarn",
     email: "RedwarnR@hotmail.com",
-    password: "#Read2me"
+    password: "#Read2me",
+    location: 23832,
+    age: 35,
+    gender: "Male",
+    bio: "I Love to Read",
+    snapchat: "TheReaderStarringGlennClose",
+    instagram: "TheReaderFan",
+    phoneNumber: 80455559456
   },
   {
     username: "JacobisPumped",
     firstname: "Jacob",
     lastname: "Johnson",
     email: "JohnsonJ12@gmail.com",
-    password: "#Pumpup2X"
+    password: "#Pumpup2X",
+    location: 23221,
+    age: 24,
+    gender: "Male",
+    bio: "Pump with me!",
+    snapchat: "Pumper24",
+    instagram: "Pumper24",
+    phoneNumber: 8045554896
   },
   {
     username: "Stephen0625",
     firstname: "Steve",
     lastname: "Wilkes",
     email: "WilkesS625@yahoo.com",
-    password: "2sexy4this" 
+    password: "2sexy4this",
+    location: 23221,
+    age: 30,
+    gender: "Male",
+    bio: "I've never worked out a day in my life",
+    snapchat: "ICryAllTheTime",
+    instagram: "ICryAllTheTime",
+    phoneNumber: 8045552313
   },
   {
     username: "Alexander12",
     firstname: "Alex",
     lastname: "Vassoon",
     email: "VassoonA89@gmail.com",
-    password: "123456"
+    password: "123456",
+    location: 23139,
+    age: 38,
+    gender: "Male",
+    bio: "I play the basoon",
+    snapchat: "Woodwindworkout",
+    instagram: "Woodwindworkout",
+    phoneNumber: 8045551189
   },
   {
     username: "Carlos359",
     firstname: "Carlos",
     lastname: "Laramie",
     email: "LaramieC43@gmail.com",
-    password: "111111" 
+    password: "111111",
+    location: 23832,
+    age: 26,
+    gender: "Non-Binary",
+    bio: "I run...away from my feelings.",
+    snapchat: "Running4Fear",
+    instagram: "Running4Fear",
+    phoneNumber: 8045552222
   },
   {
     username: "Izzy523",
     firstname: "Izzy",
     lastname: "Oble",
     email: "ObleIsHere23@yahoo.com",
-    password: "@roadRash23"
+    password: "@roadRash23",
+    location: 23221,
+    age: 45,
+    gender: "Female",
+    bio: "I will dunk on you.",
+    snapchat: "ICanDunk4Real",
+    instagram: "ICanDunk4Real",
+    phoneNumber: 8045552333
   },
   {
     username: "EmilyLifts",
     firstname: "Emily",
     lastname: "Edelbrock",
     email: "EdlebrockE22@gmail.com",
-    password: "Race4This" 
+    password: "Race4This",
+    location: 23221,
+    age: 21,
+    gender: "Female",
+    bio: "I run and I fucking rock.",
+    snapchat: "RockClimbinGal",
+    instagram: "rockClimbinGal",
+    phoneNumber: 8045554567
   },
   {
-    username: "JohnB",
-    firstname: "John",
+    username: "JoannaB",
+    firstname: "Joanna",
     lastname: "Blaze",
     email: "BlazeJ@hotmail.com",
-    password: "#BlazinJohn"
+    password: "#BlazinJohn",
+    location: 23139,
+    age: 28,
+    gender: "Female",
+    bio: "Fe is Iron, so all females are just iron males",
+    snapchat: "MargaretThatcher78",
+    instagram: "MargyThatches",
+    phoneNumber: 8045559999
   },
   {
     username: "AmandaBynes",
     firstname: "Amanda",
     lastname: "Bynes",
     email: "BynesA626@gmail.com",
-    password: "Bynes626runs"
+    password: "Bynes626runs",
+    location: 23832,
+    age: 36,
+    gender: "Female",
+    bio: "Amanda Please (as in please stop saying this to me I'm not that Amanda Bynes and even if I was I would love some fucking privacy).",
+    snapchat: "MoodysPoint",
+    instagram: "IAmMoody",
+    phoneNumber: 8045556666
   },
   {
     username: "Jessica",
     firstname: "Jessica",
     lastname: "Raile",
     email: "raileJ12@gmail.com",
-    password: "Kick2Success"
+    password: "Kick2Success",
+    location: 23221,
+    age: 49,
+    gender: "Female",
+    bio: "I like to Kickbox!",
+    snapchat: "KickboxtotheTop!",
+    instagram: "KickboxtotheTop!",
+    phoneNumber: 8045554544
   },
   {
     username: "Lisa22",
     firstname: "Lisa",
     lastname: "Bellward",
     email: "BellwardL22@hotmail.com",
-    password: "BellsforLisa22" 
+    password: "BellsforLisa22" ,
+    location: 23832,
+    age: 49,
+    gender: "Female",
+    bio: "Yoga all the time!",
+    snapchat: "YogiLisa",
+    instagram: "YogiLisa",
+    phoneNumber: 8045553875
   }
   ]);
 
