@@ -9,12 +9,12 @@ const userSchema = new Schema({
     required: true,
     trim: true
   },
-  firstName: {
+  firstname: {
     type: String,
     required: true,
     trim: true
   },
-  lastName: {
+  lastname: {
     type: String,
     required: true,
     trim: true
