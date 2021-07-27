@@ -5,9 +5,8 @@ db.once('open', async () => {
 
   await User.deleteMany();
 
-  await User.insertMany([
+  await User.create(
     {
-
     username: "Computers4real" ,
     firstname: "Bill",
     lastname: "Winklehorn",
@@ -287,7 +286,7 @@ db.once('open', async () => {
     instagram: "YogiLisa",
     phoneNumber: 8045553875
   }
-  ]);
+  );
 
   console.log('users seeded');
 
