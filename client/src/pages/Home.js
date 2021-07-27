@@ -1,15 +1,22 @@
 import React from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
-import Cart from "../components/Cart";
+import Container from '@material-ui/core/Container';
+
+// import ProductList from "../components/ProductList";
+// import CategoryMenu from "../components/CategoryMenu";
+// import Cart from "../components/Cart";
 
 const Home = () => {
   return (
-    <div className="container">
+    <Container maxWidth="lg">
+
+
+
+    {/* <div className="container">
       <CategoryMenu />
       <ProductList />
       <Cart />
-    </div>
+    </div> */}
+    </Container>
   );
 };
 
