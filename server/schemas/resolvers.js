@@ -13,6 +13,10 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    allUsers: async (parent, args) => {
+      const user = await User.find({});
+      return user;
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
