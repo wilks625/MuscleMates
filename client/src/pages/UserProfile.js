@@ -55,7 +55,7 @@ export default function FullWidthGrid() {
           <Grid item xs={12} sm={8}>
           <ActivitiesSection />
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={4}>
             <BioSection />
           </Grid>
         </Grid>
