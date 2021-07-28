@@ -1,4 +1,71 @@
-:root {
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&family=Merriweather:wght@300&family=Permanent+Marker&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&family=JetBrains+Mono:wght@100;400&family=Merriweather:wght@300&family=Permanent+Marker&display=swap');
+*{
+  /* background-color: rgb(27, 27, 27); */
+  /* background-color: grey; */
+  /* background-color: darkslategrey; */
+  padding: 0;
+  margin: 0;
+}
+.container{
+  margin-left: 0 !important; 
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+.signupinfo {
+  text-align: center;
+  padding-top: 15%;
+  /* color: white; */
+}
+.logininfo{
+  text-align: center;
+  padding-top: 15%;
+  /* color: white; */
+}
+.label{
+text-align: center;
+font-family: "permanent marker"
+}
+.mainpic{
+  inset: 0px;
+    width: 100%;
+    z-index: -1;
+}
+#piccol{
+overflow-y: hidden !important;
+}
+/* *{
+  background-color: rgb(27, 27, 27);
+  padding: 0;
+} */
+.subheader{
+  background-color: rgb(27, 27, 27);
+  padding-top: 70%;
+}
+/* .btncolor{
+ color:  white;
+ border: red;
+} */
+/* .btn{
+  background-color: gold !important;
+} */
+input:focus-visible{
+  outline-color: gold !important;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+  .subheader{
+    padding: 10% 20% 5% 5% !important;
+  }
+}
+
+
+
+
+/* :root {
   --primary: #232F3E;
   --secondary: #F3A847;
   --tertiary: #B12704;
@@ -207,4 +274,4 @@ input:focus {
   .card {
     width: 100%;
   }
-}
+} */

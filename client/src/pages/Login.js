@@ -3,11 +3,10 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-
+import { Container, Button } from 'react-bootstrap';
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -20,7 +19,6 @@ function Login(props) {
       console.log(e);
     }
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -28,16 +26,14 @@ function Login(props) {
       [name]: value,
     });
   };
-
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
+    <Container className="logininfo">
+      <Link style={{fontFamily:'Encode Sans SC', color: "gold"}} to="/signup">← Go to Signup</Link>
+      <h2 style={{fontSize: '60px', fontFamily: "permanent marker",  color: 'white'}}>Login</h2>
+      <form style={{fontFamily:'Encode Sans SC', color: 'white'}} onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
+          <label  style={{fontFamily:'Encode Sans SC', color: 'white'}}className="label" htmlFor="email">Email address:</label>
+          <input style={{color: "white"}}
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -46,8 +42,8 @@ function Login(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
+          <label  htmlFor="pwd">Password:</label>
+          <input style={{color: "white"}}
             placeholder="******"
             name="password"
             type="password"
@@ -61,11 +57,10 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <Button style={{fontFamily:'Encode Sans SC'}} variant="outline-secondary" size="lg" type="submit">Submit</Button>
         </div>
       </form>
-    </div>
+    </Container>
   );
 }
-
 export default Login;

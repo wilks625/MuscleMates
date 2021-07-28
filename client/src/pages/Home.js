@@ -1,4 +1,7 @@
 import React from "react";
+import HomepageContainerpic from '../components/HomepagePicContainer'
+
+
 import Container from '@material-ui/core/Container';
 
 // import ProductList from "../components/ProductList";
@@ -7,16 +10,10 @@ import Container from '@material-ui/core/Container';
 
 const Home = () => {
   return (
-    <Container maxWidth="lg">
+   
 
-
-
-    {/* <div className="container">
-      <CategoryMenu />
-      <ProductList />
-      <Cart />
-    </div> */}
-    </Container>
+    <HomepageContainerpic />
+   
   );
 };
 
