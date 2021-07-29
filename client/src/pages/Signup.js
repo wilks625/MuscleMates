@@ -28,12 +28,13 @@ function Signup(props) {
     });
   };
   return (
+    <div  style={{backgroundColor:'rgb(30, 30, 30)', height: '100vh'}}>
     <Container className="signupinfo">
       <Link style={{fontFamily:'Encode Sans SC', color: "gold"}} to="/login">← Go to Login</Link>
       <h2 style={{fontSize: '60px', fontFamily: "permanent marker",  color: 'white'}} >Signup</h2>
       <form style={{fontFamily:'Encode Sans SC', color: 'white'}}  className="signupform" onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
+          <label id="signuplabel" htmlFor="firstName">First Name:</label>
           <input style={{color: "white"}}
             placeholder="First"
             name="firstName"
@@ -43,7 +44,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
+          <label id="signuplabel" htmlFor="lastName">Last Name:</label>
           <input style={{color: "white"}}
             placeholder="Last"
             name="lastName"
@@ -53,7 +54,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
+          <label id="signuplabel" htmlFor="email">Email:</label>
           <input style={{color: "white"}}
             placeholder="youremail@test.com"
             name="email"
@@ -63,7 +64,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+          <label id="signuplabel" htmlFor="pwd">Password:</label>
           <input style={{color: "white"}}
             placeholder="******"
             name="password"
@@ -73,10 +74,11 @@ function Signup(props) {
           />
         </div>
         <div className="signupbutton flex-row flex-end">
-          <Button style={{fontFamily:'Encode Sans SC'}} variant="outline-secondary" size="lg" type="submit">Submit</Button>
+          <Button style={{fontFamily:'Encode Sans SC'}} variant="secondary" size="lg" type="submit">Submit</Button>
         </div>
       </form>
     </Container>
+    </div>
   );
 }
 export default Signup;

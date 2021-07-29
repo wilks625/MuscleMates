@@ -88,6 +88,9 @@ export default function FullWidthGrid() {
           </Grid>
         </Grid>
       </div>
+      <CardActions>
+        <Button size="small" variant="contained" color="primary" href="/userProfile">Back to Profile Page</Button>
+      </CardActions>
     </Container>
   );
 }
