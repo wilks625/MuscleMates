@@ -5,16 +5,18 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import { Container, Button } from 'react-bootstrap';
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', email: '', password: '', firstname: '', lastname: '', location: 0 });
   const [addUser] = useMutation(ADD_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const mutationResponse = await addUser({
       variables: {
+        username: formState.username,
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
+        firstName: formState.firstname,
+        lastName: formState.lastname,
+        location: formState.location,
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -33,23 +35,34 @@ function Signup(props) {
       <Link style={{fontFamily:'Encode Sans SC', color: "gold"}} to="/login">← Go to Login</Link>
       <h2 style={{fontSize: '60px', fontFamily: "permanent marker",  color: 'white'}} >Signup</h2>
       <form style={{fontFamily:'Encode Sans SC', color: 'white'}}  className="signupform" onSubmit={handleFormSubmit}>
+      <div className="flex-row space-between my-2">
+          <label id="signuplabel" htmlFor="username">Username:</label>
+          <input style={{color: "white"}}
+            placeholder="user"
+            name="username"
+            type="username"
+            id="username"
+            onChange={handleChange}
+          />
+        </div>
         <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="firstName">First Name:</label>
           <input style={{color: "black"}}
             placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
+            name="firstname"
+            type="firstname"
+            id="firstname"
             onChange={handleChange}
           />
         </div>
         <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="lastName">Last Name:</label>
           <input style={{color: "black"}}
+
             placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
+            name="lastname"
+            type="lastname"
+            id="lastname"
             onChange={handleChange}
           />
         </div>
@@ -70,6 +83,16 @@ function Signup(props) {
             name="password"
             type="password"
             id="pwd"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label id="signuplabel" htmlFor="location">Zip Code:</label>
+          <input style={{color: "white"}}
+            placeholder="00000"
+            name="location"
+            type="location"
+            id="location"
             onChange={handleChange}
           />
         </div>
