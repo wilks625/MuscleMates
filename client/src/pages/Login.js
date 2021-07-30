@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { Container, Button } from 'react-bootstrap';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
@@ -27,12 +28,13 @@ function Login(props) {
     });
   };
   return (
+    <div  style={{backgroundColor:'rgb(30, 30, 30)', height: '100vh'}}>
     <Container className="logininfo">
       <Link style={{fontFamily:'Encode Sans SC', color: "gold"}} to="/signup">← Go to Signup</Link>
       <h2 style={{fontSize: '60px', fontFamily: "permanent marker",  color: 'white'}}>Login</h2>
       <form style={{fontFamily:'Encode Sans SC', color: 'white'}} onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label  style={{fontFamily:'Encode Sans SC', color: 'white'}}className="label" htmlFor="email">Email address:</label>
+          <label id="loginlabel" style={{fontFamily:'Encode Sans SC', color: 'white'}} htmlFor="email">Email address:</label>
           <input style={{color: "white"}}
             placeholder="youremail@test.com"
             name="email"
@@ -42,7 +44,7 @@ function Login(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label  htmlFor="pwd">Password:</label>
+          <label id="loginlabel" htmlFor="pwd">Password:</label>
           <input style={{color: "white"}}
             placeholder="******"
             name="password"
@@ -57,10 +59,11 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <Button style={{fontFamily:'Encode Sans SC'}} variant="outline-secondary" size="lg" type="submit">Submit</Button>
+          <Button style={{fontFamily:'Encode Sans SC'}} variant="secondary" size="lg" type="submit">Submit</Button>
         </div>
       </form>
     </Container>
+    </div>
   );
 }
 export default Login;

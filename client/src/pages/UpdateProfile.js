@@ -18,6 +18,8 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 
+import PhotoUpload from '../components/UploadPhotoBtn'
+
 
 
 
@@ -63,7 +65,7 @@ export default function FullWidthGrid() {
     <Container maxWidth="lg">
       <div className={classes.root + " " + classes.card}>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={12}>
             <TextField
               id="outlined-textarea"
               label="Activity Goals"
@@ -74,8 +76,7 @@ export default function FullWidthGrid() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={3}>
-            <TextField
+          <Grid item xs={12} sm={12}>            <TextField
               id="outlined-textarea"
               label="Bio"
               placeholder="I like to lift things up and place them back down"
@@ -84,7 +85,7 @@ export default function FullWidthGrid() {
               variant="outlined"
             />
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={12}>
             <form className={classes.container} noValidate>
               <TextField
                 id="date"
@@ -98,17 +99,8 @@ export default function FullWidthGrid() {
               />
             </form>
           </Grid>
-          <Grid item xs={12} sm={3}>
-            <TextField
-              id="outlined-textarea"
-              label="Multiline Placeholder"
-              placeholder="Placeholder"
-              multiline
-              rows={4}
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item xs={6} sm={3}>
+        
+          <Grid item xs={12} sm={12}>
             <FormControl component="fieldset">
               <FormLabel component="legend">Pronoun</FormLabel>
               <RadioGroup
@@ -135,17 +127,26 @@ export default function FullWidthGrid() {
               </RadioGroup>
             </FormControl>
           </Grid>
+
           <Grid item xs={6} sm={3}>
            
           </Grid>
-          <Grid item xs={6} sm={3}>
+
+          <Grid item xs={12} sm={12}>
+            <PhotoUpload />
+          </Grid>
+
+
+          <Grid item xs={12} sm={12}>
             <Paper className={classes.paper}>xs=6 sm=3</Paper>
           </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>xs=6 sm=3</Paper>
-          </Grid>
+
         </Grid>
       </div>
+      <CardActions>
+        <Button size="small" variant="contained" color="primary" href="/userProfile">Save Changes</Button>
+        <Button size="small" variant="contained" color="primary" href="/userProfile">Back to Profile Page</Button>
+      </CardActions>
     </Container>
   );
 }

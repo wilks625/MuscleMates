@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&family=Merriweather:wght@300&family=Permanent+Marker&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&family=JetBrains+Mono:wght@100;400&family=Merriweather:wght@300&family=Permanent+Marker&display=swap');
 *{
-  /* background-color: rgb(27, 27, 27); */
-  /* background-color: grey; */
-  /* background-color: darkslategrey; */
+  /* background-color: rgb(30, 30, 30); */
   padding: 0;
   margin: 0;
 }
@@ -13,6 +11,9 @@
   padding-right: 0 !important;
   margin-right: 0 !important;
 }
+/* .homepage{
+  min-width: 100vh !important;
+} */
 .signupinfo {
   text-align: center;
   padding-top: 15%;
@@ -23,33 +24,42 @@
   padding-top: 15%;
   /* color: white; */
 }
-.label{
+#loginlabel,
+#signuplabel{
 text-align: center;
-font-family: "permanent marker"
+width: 150px;
 }
 .mainpic{
   inset: 0px;
     width: 100%;
     z-index: -1;
+    height: 850px;
 }
 #piccol{
 overflow-y: hidden !important;
+width: 750px;
 }
 /* *{
   background-color: rgb(27, 27, 27);
   padding: 0;
 } */
 .subheader{
-  background-color: rgb(27, 27, 27);
-  padding-top: 70%;
+  padding-top: 65%;
+  text-align: center;  
+}
+.homebutton{
+  text-align: center;
 }
 /* .btncolor{
  color:  white;
  border: red;
 } */
-/* .btn{
-  background-color: gold !important;
-} */
+.btn{
+  background-color: rgba(233, 214, 107, 0.637) !important;
+}
+.btn:hover{
+opacity: 50%;
+}
 input:focus-visible{
   outline-color: gold !important;
 }
@@ -61,7 +71,19 @@ input:focus-visible{
     padding: 10% 20% 5% 5% !important;
   }
 }
-
+@media screen and (max-width: 991px) {
+  .subheader{
+    padding: 10% 20% 5% 5% !important;
+  }
+  col image{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 747px) {
+.mainpic{
+height: 500px;
+}
+}
 
 
 
