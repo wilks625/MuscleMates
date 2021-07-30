@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap'
 import  pic1  from '../../assets/homePagePicture.jpeg'
 import { Link } from 'react-router-dom'
-// document.body.style = 'background: rgb(30, 30, 30);';
+document.body.style = 'background: rgb(30, 30, 30);';
 
 const HomepageContainerpic = () => {
   return (
