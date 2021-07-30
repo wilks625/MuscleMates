@@ -35,7 +35,7 @@ function Login(props) {
       <form style={{fontFamily:'Encode Sans SC', color: 'white'}} onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label id="loginlabel" style={{fontFamily:'Encode Sans SC', color: 'white'}} htmlFor="email">Email address:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -45,7 +45,7 @@ function Login(props) {
         </div>
         <div className="flex-row space-between my-2">
           <label id="loginlabel" htmlFor="pwd">Password:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="******"
             name="password"
             type="password"

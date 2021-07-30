@@ -35,7 +35,7 @@ function Signup(props) {
       <form style={{fontFamily:'Encode Sans SC', color: 'white'}}  className="signupform" onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="firstName">First Name:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="First"
             name="firstName"
             type="firstName"
@@ -45,7 +45,7 @@ function Signup(props) {
         </div>
         <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="lastName">Last Name:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="Last"
             name="lastName"
             type="lastName"
@@ -55,7 +55,7 @@ function Signup(props) {
         </div>
         <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="email">Email:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -65,7 +65,7 @@ function Signup(props) {
         </div>
         <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="pwd">Password:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="******"
             name="password"
             type="password"
