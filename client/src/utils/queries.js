@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USERS = gql`
-  {
+  query allUsers {
     allUsers {
       username
       firstname
@@ -11,12 +11,14 @@ export const QUERY_USERS = gql`
       age
       }
     }
-  }
 `;
 
 export const QUERY_PROFILE = gql`
-  {
+  query user {
     user {
+      username
+      firstname
+      lastname
       location
       age
       gender
@@ -24,6 +26,7 @@ export const QUERY_PROFILE = gql`
       snapchat
       instagram
       phoneNumber
+      email
     }
   }
 `;

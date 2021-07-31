@@ -18,7 +18,7 @@ db.once('open', async () => {
     bio: "Lift with me!",
     snapchat: "winklemix23",
     instagram: "winklemix23",
-    phoneNumber: 8045555671,
+    phoneNumber: "8045555671",
     activities: [Activities.schema],
   },
   {
@@ -33,7 +33,7 @@ db.once('open', async () => {
     bio: "Lift with me and my son!",
     snapchat: "winklemax24",
     instagram: "winklemax24",
-    phoneNumber: 8045559045,
+    phoneNumber: "8045559045",
     activities: [Activities.schema]
   },
   {
@@ -48,7 +48,7 @@ db.once('open', async () => {
     bio: "I am a muscled maniac!!!",
     snapchat: "DonnyBurns85",
     instagram: "DonnyBurnsLifts",
-    phoneNumber: 8045550000,
+    phoneNumber: "8045550000",
     activities: [Activities.schema]
   },
   {
@@ -63,7 +63,7 @@ db.once('open', async () => {
     bio: "All About that tone baby!!!",
     snapchat: "TonedDude",
     instagram: "TunedDude",
-    phoneNumber: 8045556543,
+    phoneNumber: "8045556543",
     activities: [Activities.schema]
   },
   {
@@ -78,7 +78,7 @@ db.once('open', async () => {
     bio: "I'm an old brawler",
     snapchat: "oldbrawler68",
     instagram: "oldbrawler70",
-    phoneNumber: 8045554444,
+    phoneNumber: "8045554444",
     activities: [Activities.schema]
   },
   {
@@ -93,7 +93,7 @@ db.once('open', async () => {
     bio: "I'm a muscled man of mystery!",
     snapchat: "notthatgatsby",
     instagram: "notthatgatsby",
-    phoneNumber: 8045555671,
+    phoneNumber: "8045555671",
     activities: [Activities.schema]
   },
   {
@@ -108,7 +108,7 @@ db.once('open', async () => {
     bio: "Board is life!",
     snapchat: "boardmangetspaid",
     instagram: "boardmangetspaid",
-    phoneNumber: 8045551111,
+    phoneNumber: "8045551111",
     activities: [Activities.schema]
   },
   {
@@ -123,7 +123,7 @@ db.once('open', async () => {
     bio: "Kevin. That is all.",
     snapchat: "ItsKevin",
     instagram: "ItsKevin",
-    phoneNumber: 8045550956,
+    phoneNumber: "8045550956",
     activities: [Activities.schema]
   },
   {
@@ -138,7 +138,7 @@ db.once('open', async () => {
     bio: "Believe in yourself",
     snapchat: "inspire69",
     instagram: "inspire69",
-    phoneNumber: 8045555671,
+    phoneNumber: "8045555671",
     activities: [Activities.schema]
   },
   {
@@ -153,7 +153,7 @@ db.once('open', async () => {
     bio: "I Love to Read",
     snapchat: "TheReaderStarringGlennClose",
     instagram: "TheReaderFan",
-    phoneNumber: 80455559456,
+    phoneNumber: "80455559456",
     activities: [Activities.schema]
   },
   {
@@ -168,7 +168,7 @@ db.once('open', async () => {
     bio: "Pump with me!",
     snapchat: "Pumper24",
     instagram: "Pumper24",
-    phoneNumber: 8045554896,
+    phoneNumber: "8045554896",
     activities: [Activities.schema]
   },
   {
@@ -183,7 +183,7 @@ db.once('open', async () => {
     bio: "I've never worked out a day in my life",
     snapchat: "ICryAllTheTime",
     instagram: "ICryAllTheTime",
-    phoneNumber: 8045552313,
+    phoneNumber: "8045552313",
     activities: [Activities.schema]
   },
   {
@@ -198,7 +198,7 @@ db.once('open', async () => {
     bio: "I play the basoon",
     snapchat: "Woodwindworkout",
     instagram: "Woodwindworkout",
-    phoneNumber: 8045551189,
+    phoneNumber: "8045551189",
     activities: [Activities.schema]
   },
   {
@@ -213,7 +213,7 @@ db.once('open', async () => {
     bio: "I run...away from my feelings.",
     snapchat: "Running4Fear",
     instagram: "Running4Fear",
-    phoneNumber: 8045552222,
+    phoneNumber: "8045552222",
     activities: [Activities.schema]
   },
   {
@@ -228,7 +228,7 @@ db.once('open', async () => {
     bio: "I will dunk on you.",
     snapchat: "ICanDunk4Real",
     instagram: "ICanDunk4Real",
-    phoneNumber: 8045552333,
+    phoneNumber: "8045552333",
     activities: [Activities.schema]
   },
   {
@@ -243,7 +243,7 @@ db.once('open', async () => {
     bio: "I run and I fucking rock.",
     snapchat: "RockClimbinGal",
     instagram: "rockClimbinGal",
-    phoneNumber: 8045554567,
+    phoneNumber: "8045554567",
     activities: [Activities.schema]
   },
   {
@@ -258,7 +258,7 @@ db.once('open', async () => {
     bio: "Fe is Iron, so all females are just iron males",
     snapchat: "MargaretThatcher78",
     instagram: "MargyThatches",
-    phoneNumber: 8045559999,
+    phoneNumber: "8045559999",
     activities: [Activities.schema]
   },
   {
@@ -273,7 +273,7 @@ db.once('open', async () => {
     bio: "Amanda Please (as in please stop saying this to me I'm not that Amanda Bynes and even if I was I would love some fucking privacy).",
     snapchat: "MoodysPoint",
     instagram: "IAmMoody",
-    phoneNumber: 8045556666,
+    phoneNumber: "8045556666",
     activities: [Activities.schema]
   },
   {
@@ -288,7 +288,7 @@ db.once('open', async () => {
     bio: "I like to Kickbox!",
     snapchat: "KickboxtotheTop!",
     instagram: "KickboxtotheTop!",
-    phoneNumber: 8045554544,
+    phoneNumber: "8045554544",
     activities: [Activities.schema]
   },
   {
@@ -303,7 +303,7 @@ db.once('open', async () => {
     bio: "Yoga all the time!",
     snapchat: "YogiLisa",
     instagram: "YogiLisa",
-    phoneNumber: 8045553875,
+    phoneNumber: "8045553875",
     activities: [Activities.schema]
   }
   );
