@@ -20,8 +20,9 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
+      console.log("arg", args);
       const user = await User.create(args);
-      const userAndActivities = await user.update({activities: Activities.schema});
+      const userAndActivities = await user.updateOne({activities: Activities.schema});
       const token = signToken(userAndActivities);
 
       return { token, user };

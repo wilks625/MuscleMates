@@ -4,23 +4,29 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import { Container, Button } from 'react-bootstrap';
+
 function Signup(props) {
-  const [formState, setFormState] = useState({ username: '', email: '', password: '', firstname: '', lastname: '', location: 0 });
+  const [formState, setFormState] = useState({ username: '', firstname: '', lastname: '', email: '', password: '', location: 0 });
   const [addUser] = useMutation(ADD_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    try {
     const mutationResponse = await addUser({
       variables: {
         username: formState.username,
+        firstname: formState.firstname,
+        lastname: formState.lastname,
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstname,
-        lastName: formState.lastname,
-        location: formState.location,
+        location: parseInt(formState.location),
       },
     });
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    console.log(formState.username, formState.firstname, formState.lastname, formState.email, formState.password, formState.location);
+  } catch (error) {
+    console.log(error);
+  }
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
