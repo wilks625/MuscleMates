@@ -13,7 +13,7 @@ const typeDefs = gql`
     bio: String
     snapchat: String
     instagram: String
-    phoneNumber: Int
+    phoneNumber: String
     activities: [Activities]
   }
   type Activities {

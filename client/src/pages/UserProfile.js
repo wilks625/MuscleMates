@@ -8,10 +8,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-
-import ProfilePic from '../components/ProfilePic'
-import BioSection from '../components/BioSection'
-import ActivitiesSection from '../components/ActivitiesSection'
+import ProfilePic from '../components/ProfilePic';
+import BioSection from '../components/BioSection';
+import ActivitiesSection from '../components/ActivitiesSection';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 export default function FullWidthGrid() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-
   return (
     <Container maxWidth="lg">
       <div className={classes.root}>
