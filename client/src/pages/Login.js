@@ -59,7 +59,7 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <Button style={{fontFamily:'Encode Sans SC'}} variant="secondary" size="lg" type="submit">Submit</Button>
+          <Button  style={{fontFamily:'Encode Sans SC'}} variant="secondary" size="lg" type="submit">Submit</Button>
         </div>
       </form>
     </Container>
