@@ -21,20 +21,28 @@ export default function SimpleMenu() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-       <div>
+        <div>
+          <MenuItem onClick={handleClose} component={Link} to="/">
+            Home
+          </MenuItem>
           <MenuItem onClick={handleClose} component={Link} to="/UserProfile">
-          Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/matches">
-          My Matches
-        </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/UpdateProfile">
-          Update Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose} onClick={() => Auth.logout()} component={Link} to="/">
-          logout
-        </MenuItem>
-       </div>
+            Profile
+          </MenuItem>
+          <MenuItem onClick={handleClose} component={Link} to="/matches">
+            My Matches
+          </MenuItem>
+          <MenuItem onClick={handleClose} component={Link} to="/UpdateProfile">
+            Update Profile
+          </MenuItem>
+          <MenuItem
+            onClick={handleClose}
+            onClick={() => Auth.logout()}
+            component={Link}
+            to="/"
+          >
+            Logout
+          </MenuItem>
+        </div>
       );
     } else {
       return (
