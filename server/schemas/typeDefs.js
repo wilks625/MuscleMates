@@ -29,7 +29,14 @@ const typeDefs = gql`
     yoga: Boolean
     hiking: Boolean
   }
-
+  type Geolocations {
+    userId: ID
+    address: String
+    point: String
+    formatedAddress: String
+    zipcode: Int
+    city: String
+  }
   type Auth {
     token: ID
     user: User
@@ -39,6 +46,7 @@ const typeDefs = gql`
     activities: [Activities]
     user: User
     allUsers: [User]
+    geolocation: [Geolocations]
   }
 
   type Mutation {
@@ -46,6 +54,7 @@ const typeDefs = gql`
     updateUser(firstname: String, lastname: String, email: String, password: String): User
     updateActivities(_id: ID!): Activities
     login(email: String!, password: String!): Auth
+   
   }
 `;
 
