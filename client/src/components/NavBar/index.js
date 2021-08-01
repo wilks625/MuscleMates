@@ -14,8 +14,10 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
 
 import NavMenu from '../NavMenu'
+import { Button } from 'bootstrap';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -117,8 +119,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose} component={Link} to="/UserProfile">Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose} component={Link} to="/UpdateProfile" >UpdateProfile</MenuItem>
     </Menu>
   );
 
@@ -176,7 +178,7 @@ export default function PrimarySearchAppBar() {
           </IconButton>
           
           <Typography className={classes.title} variant="h6" noWrap>
-            MuscleMates
+            💪🏼 MuscleMates💪🏼
           </Typography>
           {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
