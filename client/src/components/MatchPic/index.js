@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import pic1 from '../../assets/gymgoer1.jpeg'
+import pic2 from '../../assets/gymgoer2.jpeg'
 import { CardMedia } from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
@@ -31,20 +31,8 @@ const  SimpleCard = () => {
   return (
       <CardMedia 
       className={classes.media}
-      image={pic1}
+      image={pic2}
       >
-              {/* <CardContent img src={pic1}>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  Profile Picture Container Profile Picture Container Profile
-                  Picture Container Profile Picture Container Profile Picture
-                  Container Profile Picture Container Profile Picture Container
-                  Profile Picture Container
-                </Typography>
-              </CardContent> */}
               </CardMedia>
   );
 }
