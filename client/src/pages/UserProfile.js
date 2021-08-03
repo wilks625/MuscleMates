@@ -8,13 +8,10 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import ProfilePic from '../components/ProfilePic';
-import BioSection from '../components/BioSection';
-import ActivitiesSection from '../components/ActivitiesSection';
-import { useQuery } from "@apollo/client";
-import { QUERY_PROFILE } from '../utils/queries';
-import { numberFormat, mapTrueActivities } from '../utils/helpers'
-
+import ProfilePic from '../components/ProfilePic'
+import BioSection from '../components/BioSection'
+import ActivitiesSection from '../components/ActivitiesSection'
+import Moreinfo from '../components/MoreInfo'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -41,8 +38,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid grey",
   },
 }));
-
-export default function FullWidthGrid() {
+function FullWidthGrid() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   const { loading, data } = useQuery(QUERY_PROFILE);
@@ -52,39 +48,37 @@ export default function FullWidthGrid() {
     console.log(mapTrueActivities(activities[0]));
   }
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
+      <Container style={{fontSize: '60px'}}>
+        <div style={{color:'white', textAlign:'center', fontFamily:'Encode Sans SC', display: 'inline-block'}}>
+        WELCOME,
+        </div>
+        {'  '}
+        <div style={{fontFamily: "permanent marker", color:'rgba(233, 214, 107, 0.637)', textAlign:'center', display: 'inline-block'}}>
+          Jacob Black
+        </div>
+      </Container>
       <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={4}>
+        <Grid container  spacing={3}>
+          <Grid item xs={2} sm={6} >
             <ProfilePic />
           </Grid>
-          
-
-          <Grid item xs={12} sm={8}>
-          {loading ? (
-              <div>Loading...</div>
-            ) : (
-          <ActivitiesSection activities={mapTrueActivities(profile.activities)} />
-            )
-              }
+          <Grid item xs={12} sm={6}>
+          <BioSection />
           </Grid>
-
-
-          <Grid item xs={12} sm={4}>
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-            <BioSection bio={profile.bio} age={profile.age} email={profile.email} phone={numberFormat(profile.phoneNumber)} location={profile.location}/>
-            )}
+          <Grid item xs={12} sm={6}>
+          <ActivitiesSection />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Moreinfo />
           </Grid>
         </Grid>
       </div>
       <CardActions>
-        <Button size="small" variant="contained" color="primary" href="/updateProfile">Update Profile Information</Button>
-        <Button size="small" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
-        <Button size="small" variant="contained" color="primary" onClick={checkData}>Check Data</Button>
+        <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign:'center'}} size="lg" variant="contained" color="primary"  href="/updateProfile">Update Profile Information</Button>
+        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
       </CardActions>
-
     </Container>
   );
 }
+export default FullWidthGrid

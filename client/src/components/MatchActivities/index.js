@@ -41,9 +41,9 @@ const SimpleCard = () => {
         gutterBottom
       >
         <h3 className="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>My Activities</h3>
-        <p className="font-weight-bold">Running</p>
-        <p className="font-weight-bold">Swimming</p>
-        <p className="font-weight-bold">Biking</p>
+        <p className="font-weight-bold">lifting</p>
+        <p className="font-weight-bold">running</p>
+        <p className="font-weight-bold">yoga</p>
       </Typography>
     </CardContent>
   </Card>

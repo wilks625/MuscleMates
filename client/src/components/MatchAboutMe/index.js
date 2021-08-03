@@ -42,7 +42,7 @@ const useStyles = makeStyles({
       gutterBottom
     >
       <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>About Me</h3>
-      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>This is my bio. I like to lift.</p>
+      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>This is my matches bio. I like to lift too. :)</p>
       <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Age: </p><p>32</p>
       <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Email: </p><p>test@tesing.com</p>
       <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Phone: </p><p>(804)123-4567</p>
