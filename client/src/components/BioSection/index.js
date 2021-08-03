@@ -5,9 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { useQuery } from '@apollo/client';
-import { QUERY_PROFILE } from '../../utils/queries';
-import { numberFormat } from '../../utils/helpers';
+//import { numberFormat } from '../../utils/helpers';
 
 const useStyles = makeStyles({
   root: {
@@ -33,12 +31,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleCard() {
+export default function SimpleCard({ bio, age, email, phone, location }) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  const { data } = useQuery(QUERY_PROFILE);
   return (
-    
 <Card className={classes.card}>
 <CardContent>
   <Typography
@@ -46,11 +42,11 @@ export default function SimpleCard() {
     color="textSecondary"
     gutterBottom
   >
-    <h3 class="mt-3 text-center">Bio:{data.user.bio}</h3>
-    <p class="font-weight-bold">Age: {data.user.age}</p>
-    <p class="font-weight-bold">Email: {data.user.email}</p>
-    <p class="font-weight-bold">Phone: {numberFormat(data.user.phoneNumber)}</p>
-    <p class="font-weight-bold">Location: {data.user.location}</p>
+    <h3 class="mt-3 text-center">Bio:{bio}</h3>
+    <p class="font-weight-bold">Age: {age}</p>
+    <p class="font-weight-bold">Email: {email}</p>
+    <p class="font-weight-bold">Phone: {phone}</p>
+    <p class="font-weight-bold">Location: {location}</p>
 
 
 

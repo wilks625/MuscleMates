@@ -17,6 +17,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import { useQuery } from "@apollo/client";
+import { UPDATE_USER } from '../utils/mutations';
 
 import PhotoUpload from '../components/UploadPhotoBtn'
 
@@ -53,13 +55,15 @@ function valuetext(value) {
 export default function FullWidthGrid() {
   const classes = useStyles();
 
-  const [value, setValue] = React.useState('female');
+  const [value, setValue] = React.useState({});
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
-  
+  const submitChanges = () => {
+
+  };
 
   return (
     <Container maxWidth="lg">
@@ -110,17 +114,17 @@ export default function FullWidthGrid() {
                 onChange={handleChange}
               >
                 <FormControlLabel
-                  value="sheher"
+                  value="Female"
                   control={<Radio />}
                   label="She/Her"
                 />
                 <FormControlLabel
-                  value="hehim"
+                  value="Male"
                   control={<Radio />}
                   label="He/Him"
                 />
                 <FormControlLabel
-                  value="theythem"
+                  value="Non-Binary"
                   control={<Radio />}
                   label="They/Them"
                 />
@@ -144,7 +148,7 @@ export default function FullWidthGrid() {
         </Grid>
       </div>
       <CardActions>
-        <Button size="small" variant="contained" color="primary" href="/userProfile">Save Changes</Button>
+        <Button size="small" variant="contained" color="primary" onClick={submitChanges}>Save Changes</Button>
         <Button size="small" variant="contained" color="primary" href="/userProfile">Back to Profile Page</Button>
       </CardActions>
     </Container>

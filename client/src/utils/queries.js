@@ -27,6 +27,18 @@ export const QUERY_PROFILE = gql`
       instagram
       phoneNumber
       email
+      activities {
+        strengthTraining
+        biking
+        running
+        swimming
+        basketball
+        soccer 
+        tennis
+        rockClimbing
+        yoga
+        hiking
+        }
     }
   }
 `;

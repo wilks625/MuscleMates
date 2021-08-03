@@ -11,6 +11,9 @@ import Container from "@material-ui/core/Container";
 import ProfilePic from '../components/ProfilePic';
 import BioSection from '../components/BioSection';
 import ActivitiesSection from '../components/ActivitiesSection';
+import { useQuery } from "@apollo/client";
+import { QUERY_PROFILE } from '../utils/queries';
+import { numberFormat, mapTrueActivities } from '../utils/helpers'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
 export default function FullWidthGrid() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  const { loading, data } = useQuery(QUERY_PROFILE);
+  const profile = data?.user || {};
+  const activities = data?.user.activities || [];
+  const checkData = () => {
+    console.log(mapTrueActivities(activities[0]));
+  }
   return (
     <Container maxWidth="lg">
       <div className={classes.root}>
@@ -52,18 +61,28 @@ export default function FullWidthGrid() {
           
 
           <Grid item xs={12} sm={8}>
-          <ActivitiesSection />
+          {loading ? (
+              <div>Loading...</div>
+            ) : (
+          <ActivitiesSection activities={mapTrueActivities(profile.activities)} />
+            )
+              }
           </Grid>
 
 
           <Grid item xs={12} sm={4}>
-            <BioSection />
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+            <BioSection bio={profile.bio} age={profile.age} email={profile.email} phone={numberFormat(profile.phoneNumber)} location={profile.location}/>
+            )}
           </Grid>
         </Grid>
       </div>
       <CardActions>
         <Button size="small" variant="contained" color="primary" href="/updateProfile">Update Profile Information</Button>
         <Button size="small" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
+        <Button size="small" variant="contained" color="primary" onClick={checkData}>Check Data</Button>
       </CardActions>
 
     </Container>
