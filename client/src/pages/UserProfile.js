@@ -44,13 +44,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 function FullWidthGrid() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   const { loading, data } = useQuery(QUERY_PROFILE);
   const profile = data?.user || {};
   const activities = data?.user.activities || [];
-  const checkData = () => {
-    console.log(mapTrueActivities(activities[0]));
-  }
   return (
     <Container maxWidth="md">
       <Container style={{fontSize: '60px'}}>
@@ -88,7 +84,6 @@ function FullWidthGrid() {
       <CardActions>
         <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign:'center'}} size="lg" variant="contained" color="primary"  href="/updateProfile">Update Profile Information</Button>
         <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
-        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" onClick={checkData} >Check Data</Button>
       </CardActions>
     </Container>
   );

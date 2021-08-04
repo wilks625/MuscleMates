@@ -18,6 +18,10 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import PhotoUpload from "../components/UploadPhotoBtn";
 import FormGroup from "@material-ui/core/FormGroup";
 import Checkbox from "@material-ui/core/Checkbox";
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILE } from '../utils/queries';
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -51,6 +55,7 @@ export default function FullWidthGrid() {
     setTime({ ...state, [event.target.name]: event.target.checked });
     setValue(event.target.value);
   };
+
   const [state, setState] = React.useState({
     strength: true,
     biking: false,
@@ -78,6 +83,9 @@ export default function FullWidthGrid() {
     hiking,
   } = state;
   const { morning, afternoon, night } = time;
+  const checkData = () => {
+    console.log(value, state);
+  }
   return (
     <>
       <div>
@@ -154,21 +162,21 @@ export default function FullWidthGrid() {
                   onChange={handleChange}
                 >
                   <FormControlLabel
-                    value="sheher"
+                    value="Female"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
                     label="She/Her"
                   />
                   <FormControlLabel
-                    value="hehim"
+                    value="Male"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
                     label="He/Him"
                   />
                   <FormControlLabel
-                    value="theythem"
+                    value="Non-Binary"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
@@ -414,6 +422,7 @@ export default function FullWidthGrid() {
           >
             Back to Profile Page
           </Button>
+          <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" onClick={checkData} >Check Data</Button>
         </CardActions>
       </Container>
     </>

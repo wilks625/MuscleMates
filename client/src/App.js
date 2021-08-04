@@ -55,7 +55,9 @@ function App() {
             <NavBar />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/userProfile" component={UserProfile} />
+              <Route exact path="/userProfile">
+              <UserProfile />
+              </Route>
               <Route exact path="/grid" component={Grid} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />

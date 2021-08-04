@@ -7,15 +7,14 @@ const typeDefs = gql`
     firstname: String
     lastname: String
     email: String
-    location: Int
+    password: String
     latitude: String
     longitude: String
-    age: Int
-    gender: String
+    birthday: String
+    pronouns: String
     bio: String
-    snapchat: String
-    instagram: String
     phoneNumber: String
+    picture: [Picture]
     activities: [Activities]
   }
   type Activities {
@@ -31,6 +30,11 @@ const typeDefs = gql`
     yoga: Boolean
     hiking: Boolean
   }
+  type Picture {
+    name: String
+    desc: String
+    img: String
+  }
  
   type Auth {
     token: ID
@@ -44,8 +48,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(username: String!, firstname: String!, lastname: String!, email: String!, password: String!, location: Int!, age: Int, gender: String, bio: String, snapchat: String, instagram: String, phoneNumber: String): Auth
-    updateUser(username: String, firstname: String, lastname: String, email: String, password: String, location: Int, age: Int, gender: String, bio: String, snapchat: String, instagram: String, phoneNumber: String): User
+    addUser(username: String!, firstname: String!, lastname: String!, email: String!, password: String!): Auth
+    updateUser(username: String, firstname: String, lastname: String, email: String, password: String, latitude: String, longitude: String, birthday: String, pronouns: String, bio: String, phoneNumber: String): User
     updateActivities(_id: ID!): Activities
     login(email: String!, password: String!): Auth
    

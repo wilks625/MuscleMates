@@ -18,13 +18,6 @@ export const ADD_USER = gql`
     $lastname: String!
     $email: String!
     $password: String!
-    $location: Int!
-    $age: String
-    $gender: String
-    $bio: String
-    $snapchat: String
-    $instagram: String
-    $phoneNumber: String
   ) {
     addUser(
       username: $username
@@ -32,13 +25,6 @@ export const ADD_USER = gql`
       lastname: $lastname
       email: $email
       password: $password
-      location: $location
-      age: $age
-      gender: $gender
-      bio: $bio
-      snapchat: $snapchat
-      instagram: $instagram
-      phoneNumber: $phoneNumber
     ) {
       token
       user {

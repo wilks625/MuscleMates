@@ -30,36 +30,22 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  location: {
-    type: Number,
-    required: true,
-  },
-
   latitude: {
     type: String,
   },
   longitude: {
     type: String,
   },
-  
-  age: {
-    type: Number,
+  birthday: {
+    type: String,
     required: false,
   },
-  gender: {
+  pronouns: {
     type: String,
-    enum: ["Male", "Female", "Non-Binary"],
+    enum: ["He/Him", "She/Her", "They/Them"],
     required: false,
   },
   bio: {
-    type: String,
-    required: false,
-  },
-  snapchat: {
-    type: String,
-    required: false,
-  },
-  instagram: {
     type: String,
     required: false,
   },
