@@ -4,6 +4,8 @@ import  pic1  from '../../assets/homePagePicture.jpeg'
 import { Link } from 'react-router-dom'
 import useFindMe from "../../utils/useFindMe"
 // document.body.style = 'background: rgb(30, 30, 30);';
+document.body.style = 'background: rgb(30, 30, 30);';
+
 
 const HomepageContainerpic = () => {
   const {coord}= useFindMe()

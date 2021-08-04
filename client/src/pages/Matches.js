@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import MatchCards from "../components/MatchCards"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,54 +44,21 @@ export default function FullWidthGrid() {
   return (
     <Container maxWidth="lg">
       <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={4}>
-            <Card className={classes.card}>
-              <CardContent>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  Match 1
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          
-
-          <Grid item xs={12} sm={4}>
-          <Card className={classes.card}>
-              <CardContent>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  Match 1
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} sm={4}>
-          <Card className={classes.card}>
-              <CardContent>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  Match 1
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+      return (
+        <Grid container 
+                direction="column"
+                justifyContent="flex-start"
+                alignItems="center"
+        >
+                    <Grid xs={12}>
+                        <MatchCards />
+                        </Grid>
         </Grid>
-      </div>
       <CardActions>
         <Button size="small" variant="contained" color="primary" href="/userProfile">Back to Profile Page</Button>
       </CardActions>
+    )
+      </div>
     </Container>
   );
 }
