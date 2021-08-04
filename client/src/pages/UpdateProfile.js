@@ -18,6 +18,12 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import PhotoUpload from "../components/UploadPhotoBtn";
 import FormGroup from "@material-ui/core/FormGroup";
 import Checkbox from "@material-ui/core/Checkbox";
+import {useState, useEffect} from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+import { QUERY_PROFILE } from '../utils/queries';
+import { UPDATE_USER } from '../utils/mutations';
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -44,40 +50,30 @@ function valuetext(value) {
 // }
 export default function FullWidthGrid() {
   const classes = useStyles();
-  const [value, setValue] = React.useState("female");
+  const { data, loading, error } = useQuery(QUERY_PROFILE);
+  const [state, setState] = React.useState();
+  useEffect(() => {
+    if(loading === false && data){
+        setState(data);
+    }
+}, [loading, data])
+
+  const profile = data?.user || {};
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    setValue(event.target.value);
-    setTime({ ...state, [event.target.name]: event.target.checked });
-    setValue(event.target.value);
-  };
-  const [state, setState] = React.useState({
-    strength: true,
-    biking: false,
-    running: false,
-    swimming: false,
-    basketball: false,
-    soccer: false,
-    tennis: false,
-  });
-  const [time, setTime] = React.useState({
-    morning: true,
-    afternoon: false,
-    night: false,
-  });
-  const {
-    strength,
-    biking,
-    running,
-    swimming,
-    basketball,
-    soccer,
-    tennis,
-    rockclimbing,
-    yoga,
-    hiking,
-  } = state;
-  const { morning, afternoon, night } = time;
+    setState({ ...state, [event.target.name]: event.target.value });
+    };
+  const [updateUser] = useMutation(UPDATE_USER);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      console.log("SUCCESS!!!")
+    } catch (error) {
+      console.log("THERE WAS AN ERROR", error);
+    }
+  }
+  const checkData = () => {
+    console.log(profile, state);
+  }
   return (
     <>
       <div>
@@ -150,25 +146,25 @@ export default function FullWidthGrid() {
                 <RadioGroup
                   aria-label="Pronoun"
                   name="Pronoun1"
-                  value={value}
+                  value={state.user.pronouns}
                   onChange={handleChange}
                 >
                   <FormControlLabel
-                    value="sheher"
+                    value="She/Her"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
                     label="She/Her"
                   />
                   <FormControlLabel
-                    value="hehim"
+                    value="He/Him"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
                     label="He/Him"
                   />
                   <FormControlLabel
-                    value="theythem"
+                    value="They/Them"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
@@ -191,118 +187,17 @@ export default function FullWidthGrid() {
                   >
                     Activities
                   </FormLabel>
-                  <FormGroup style={{ color: "white" }}>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={strength}
-                          onChange={handleChange}
-                          name="strength"
-                        />
-                      }
-                      label="Strength Training"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={biking}
-                          onChange={handleChange}
-                          name="biking"
-                        />
-                      }
-                      label="Biking"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={running}
-                          onChange={handleChange}
-                          name="running"
-                        />
-                      }
-                      label="Running"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={swimming}
-                          onChange={handleChange}
-                          name="swimming"
-                        />
-                      }
-                      label="Swimming"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={basketball}
-                          onChange={handleChange}
-                          name="basketball"
-                        />
-                      }
-                      label="Basketball"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={soccer}
-                          onChange={handleChange}
-                          name="soccer"
-                        />
-                      }
-                      label="Soccer"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={tennis}
-                          onChange={handleChange}
-                          name="tennis"
-                        />
-                      }
-                      label="Tennis"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={rockclimbing}
-                          onChange={handleChange}
-                          name="rockclimbing"
-                        />
-                      }
-                      label="Rock Climbing"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={yoga}
-                          onChange={handleChange}
-                          name="yoga"
-                        />
-                      }
-                      label="Yoga"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={hiking}
-                          onChange={handleChange}
-                          name="hiking"
-                        />
-                      }
-                      label="Hiking"
-                    />
-                  </FormGroup>
+                  <Grid item xs={12} sm={4}>
+              <TextField
+                style={{ backgroundColor: "white" }}
+                id="outlined-textarea"
+                label="Activity Goals"
+                placeholder="Get stronger!"
+                multiline
+                rows={4}
+                // variant="outlined"
+              />
+            </Grid>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -326,7 +221,7 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={morning}
+                          checked={false}
                           onChange={handleChange}
                           name="morning"
                         />
@@ -337,7 +232,7 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={afternoon}
+                          checked={false}
                           onChange={handleChange}
                           name="afternoon"
                         />
@@ -348,7 +243,7 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={night}
+                          checked={false}
                           onChange={handleChange}
                           name="night"
                         />
@@ -397,7 +292,7 @@ export default function FullWidthGrid() {
             size="lg"
             variant="contained"
             color="primary"
-            href="/userProfile"
+            onClick={handleFormSubmit}
           >
             Save Changes
           </Button>
@@ -414,6 +309,7 @@ export default function FullWidthGrid() {
           >
             Back to Profile Page
           </Button>
+          <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" onClick={checkData} >Check Data</Button>
         </CardActions>
       </Container>
     </>

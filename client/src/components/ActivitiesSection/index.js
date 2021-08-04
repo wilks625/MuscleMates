@@ -5,7 +5,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Activities from '../Activities';
 
 const useStyles = makeStyles({
   root: {
@@ -43,7 +42,7 @@ const SimpleCard = ({ activities }) => {
         gutterBottom
       >
         <h3 className="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>My Activities</h3>
-        <Activities className="font-weight-bold" activities={activities} />
+        <p>{activities}</p>
       </Typography>
     </CardContent>
   </Card>

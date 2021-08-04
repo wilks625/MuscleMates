@@ -6,7 +6,7 @@ import { ADD_USER } from '../utils/mutations';
 import { Container, Button } from 'react-bootstrap';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ username: '', firstname: '', lastname: '', email: '', password: '', location: 0 });
+  const [formState, setFormState] = useState({ username: '', firstname: '', lastname: '', email: '', password: '', });
   const [addUser] = useMutation(ADD_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -18,7 +18,6 @@ function Signup(props) {
         lastname: formState.lastname,
         email: formState.email,
         password: formState.password,
-        location: parseInt(formState.location),
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -43,7 +42,7 @@ function Signup(props) {
       <form style={{fontFamily:'Encode Sans SC', color: 'white'}}  className="signupform" onSubmit={handleFormSubmit}>
       <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="username">Username:</label>
-          <input style={{color: "white"}}
+          <input style={{color: "black"}}
             placeholder="user"
             name="username"
             type="username"
@@ -89,16 +88,6 @@ function Signup(props) {
             name="password"
             type="password"
             id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label id="signuplabel" htmlFor="location">Zip Code:</label>
-          <input style={{color: "white"}}
-            placeholder="00000"
-            name="location"
-            type="location"
-            id="location"
             onChange={handleChange}
           />
         </div>
