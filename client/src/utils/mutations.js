@@ -49,6 +49,7 @@ mutation updateUser(
   $phoneNumber: String
   $timePref: String
   $goals: String
+  $activities: String
 ) {
   updateUser(
     username: $username
@@ -64,6 +65,7 @@ mutation updateUser(
     phoneNumber: $phoneNumber
     timePref: $timePref
     goals: $goals
+    activities: $activities
   ) {
     user {
       _id

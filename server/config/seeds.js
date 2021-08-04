@@ -12,14 +12,6 @@ db.once('open', async () => {
     lastname: "Winklehorn",
     email: "WinklehornB007@aol.com",
     password: "Trailmixed23",
-    location: 23221,
-    age: 26,
-    gender: "Male",
-    bio: "Lift with me!",
-    snapchat: "winklemix23",
-    instagram: "winklemix23",
-    phoneNumber: "8045555671",
-    activities: [Activities.schema],
   },
   {
     username: "Pizza4me" ,
@@ -27,14 +19,6 @@ db.once('open', async () => {
     lastname: "Winklehorn",
     email: "WinklehornB006@yahoo.com",
     password: "2sexy4exercise",
-    location: 23221,
-    age: 36,
-    gender: "Male",
-    bio: "Lift with me and my son!",
-    snapchat: "winklemax24",
-    instagram: "winklemax24",
-    phoneNumber: "8045559045",
-    activities: [Activities.schema]
   },
   {
     username: "BigTyme" ,
@@ -42,14 +26,6 @@ db.once('open', async () => {
     lastname: "Burgundy",
     email: "Burgandy@channel8news.com",
     password: "TooSwole4this",
-    location: 23139,
-    age: 45,
-    gender: "Male",
-    bio: "I am a muscled maniac!!!",
-    snapchat: "DonnyBurns85",
-    instagram: "DonnyBurnsLifts",
-    phoneNumber: "8045550000",
-    activities: [Activities.schema]
   },
   {
     username: "Pump&Tone",
@@ -57,14 +33,6 @@ db.once('open', async () => {
     lastname: "Fransisco",
     email: "RunWitMe4fun@gmail.com",
     password: "Igot#theruns100",
-    location: 23139,
-    age: 21,
-    gender: "Male",
-    bio: "All About that tone baby!!!",
-    snapchat: "TonedDude",
-    instagram: "TunedDude",
-    phoneNumber: "8045556543",
-    activities: [Activities.schema]
   },
   {
     username: "SebastianJ88",
@@ -72,14 +40,6 @@ db.once('open', async () => {
     lastname: "Jeffersly",
     email: "Jeffersly02@hotmail.com",
     password: "Bo$$88",
-    location: 23139,
-    age: 85,
-    gender: "Male",
-    bio: "I'm an old brawler",
-    snapchat: "oldbrawler68",
-    instagram: "oldbrawler70",
-    phoneNumber: "8045554444",
-    activities: [Activities.schema]
   },
   {
     username: "MiricaleMuscles" ,
@@ -87,14 +47,6 @@ db.once('open', async () => {
     lastname: "Gatsby",
     email: "Gatsby@gmail.com",
     password: "Bobis2sexy",
-    location: 23221,
-    age: 50,
-    gender: "Male",
-    bio: "I'm a muscled man of mystery!",
-    snapchat: "notthatgatsby",
-    instagram: "notthatgatsby",
-    phoneNumber: "8045555671",
-    activities: [Activities.schema]
   },
   {
     username: "Rafeal98" ,
@@ -102,14 +54,6 @@ db.once('open', async () => {
     lastname: "Boardbottom",
     email: "BottomB@yahoo.com",
     password: "Started@Dabottom2",
-    location: 23221,
-    age: 56,
-    gender: "Male",
-    bio: "Board is life!",
-    snapchat: "boardmangetspaid",
-    instagram: "boardmangetspaid",
-    phoneNumber: "8045551111",
-    activities: [Activities.schema]
   },
   {
     username: "Kevin99" ,
@@ -117,14 +61,6 @@ db.once('open', async () => {
     lastname: "Kandistidious",
     email: "StudiousK@gmail.com",
     password: "#Kevin400",
-    location: 23832,
-    age: 33,
-    gender: "Male",
-    bio: "Kevin. That is all.",
-    snapchat: "ItsKevin",
-    instagram: "ItsKevin",
-    phoneNumber: "8045550956",
-    activities: [Activities.schema]
   },
   {
     username: "McLuvin" ,
@@ -132,14 +68,6 @@ db.once('open', async () => {
     lastname: "Davidson",
     email: "DavidsonM@aol.com",
     password: "#Cash69Money",
-    location: 23832,
-    age: 52,
-    gender: "Non-Binary",
-    bio: "Believe in yourself",
-    snapchat: "inspire69",
-    instagram: "inspire69",
-    phoneNumber: "8045555671",
-    activities: [Activities.schema]
   },
   {
     username: "Rod00" ,
@@ -147,14 +75,6 @@ db.once('open', async () => {
     lastname: "Redwarn",
     email: "RedwarnR@hotmail.com",
     password: "#Read2me",
-    location: 23832,
-    age: 35,
-    gender: "Male",
-    bio: "I Love to Read",
-    snapchat: "TheReaderStarringGlennClose",
-    instagram: "TheReaderFan",
-    phoneNumber: "80455559456",
-    activities: [Activities.schema]
   },
   {
     username: "JacobisPumped",
@@ -162,14 +82,6 @@ db.once('open', async () => {
     lastname: "Johnson",
     email: "JohnsonJ12@gmail.com",
     password: "#Pumpup2X",
-    location: 23221,
-    age: 24,
-    gender: "Male",
-    bio: "Pump with me!",
-    snapchat: "Pumper24",
-    instagram: "Pumper24",
-    phoneNumber: "8045554896",
-    activities: [Activities.schema]
   },
   {
     username: "Stephen0625",
@@ -177,14 +89,6 @@ db.once('open', async () => {
     lastname: "Wilkes",
     email: "WilkesS625@yahoo.com",
     password: "2sexy4this",
-    location: 23221,
-    age: 30,
-    gender: "Male",
-    bio: "I've never worked out a day in my life",
-    snapchat: "ICryAllTheTime",
-    instagram: "ICryAllTheTime",
-    phoneNumber: "8045552313",
-    activities: [Activities.schema]
   },
   {
     username: "Alexander12",
@@ -192,14 +96,6 @@ db.once('open', async () => {
     lastname: "Vassoon",
     email: "VassoonA89@gmail.com",
     password: "123456",
-    location: 23139,
-    age: 38,
-    gender: "Male",
-    bio: "I play the basoon",
-    snapchat: "Woodwindworkout",
-    instagram: "Woodwindworkout",
-    phoneNumber: "8045551189",
-    activities: [Activities.schema]
   },
   {
     username: "Carlos359",
@@ -207,14 +103,6 @@ db.once('open', async () => {
     lastname: "Laramie",
     email: "LaramieC43@gmail.com",
     password: "111111",
-    location: 23832,
-    age: 26,
-    gender: "Non-Binary",
-    bio: "I run...away from my feelings.",
-    snapchat: "Running4Fear",
-    instagram: "Running4Fear",
-    phoneNumber: "8045552222",
-    activities: [Activities.schema]
   },
   {
     username: "Izzy523",
@@ -222,14 +110,6 @@ db.once('open', async () => {
     lastname: "Oble",
     email: "ObleIsHere23@yahoo.com",
     password: "@roadRash23",
-    location: 23221,
-    age: 45,
-    gender: "Female",
-    bio: "I will dunk on you.",
-    snapchat: "ICanDunk4Real",
-    instagram: "ICanDunk4Real",
-    phoneNumber: "8045552333",
-    activities: [Activities.schema]
   },
   {
     username: "EmilyLifts",
@@ -237,14 +117,6 @@ db.once('open', async () => {
     lastname: "Edelbrock",
     email: "EdlebrockE22@gmail.com",
     password: "Race4This",
-    location: 23221,
-    age: 21,
-    gender: "Female",
-    bio: "I run and I fucking rock.",
-    snapchat: "RockClimbinGal",
-    instagram: "rockClimbinGal",
-    phoneNumber: "8045554567",
-    activities: [Activities.schema]
   },
   {
     username: "JoannaB",
@@ -252,14 +124,6 @@ db.once('open', async () => {
     lastname: "Blaze",
     email: "BlazeJ@hotmail.com",
     password: "#BlazinJohn",
-    location: 23139,
-    age: 28,
-    gender: "Female",
-    bio: "Fe is Iron, so all females are just iron males",
-    snapchat: "MargaretThatcher78",
-    instagram: "MargyThatches",
-    phoneNumber: "8045559999",
-    activities: [Activities.schema]
   },
   {
     username: "AmandaBynes",
@@ -267,14 +131,6 @@ db.once('open', async () => {
     lastname: "Bynes",
     email: "BynesA626@gmail.com",
     password: "Bynes626runs",
-    location: 23832,
-    age: 36,
-    gender: "Female",
-    bio: "Amanda Please (as in please stop saying this to me I'm not that Amanda Bynes and even if I was I would love some fucking privacy).",
-    snapchat: "MoodysPoint",
-    instagram: "IAmMoody",
-    phoneNumber: "8045556666",
-    activities: [Activities.schema]
   },
   {
     username: "Jessica",
@@ -282,29 +138,13 @@ db.once('open', async () => {
     lastname: "Raile",
     email: "raileJ12@gmail.com",
     password: "Kick2Success",
-    location: 23221,
-    age: 49,
-    gender: "Female",
-    bio: "I like to Kickbox!",
-    snapchat: "KickboxtotheTop!",
-    instagram: "KickboxtotheTop!",
-    phoneNumber: "8045554544",
-    activities: [Activities.schema]
   },
   {
     username: "Lisa22",
     firstname: "Lisa",
     lastname: "Bellward",
     email: "BellwardL22@hotmail.com",
-    password: "BellsforLisa22" ,
-    location: 23832,
-    age: 49,
-    gender: "Female",
-    bio: "Yoga all the time!",
-    snapchat: "YogiLisa",
-    instagram: "YogiLisa",
-    phoneNumber: "8045553875",
-    activities: [Activities.schema]
+    password: "BellsforLisa22",
   }
   );
 

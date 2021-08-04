@@ -4,25 +4,6 @@ export function numberFormat(number) {
   return newString
 }
 
-export function mapTrueActivities(object) {
-  const actArr = [];
-  for (const property in object) {
-      if (object[property] === true) {
-        actArr.push(property)
-      }
-  }
-    return actArr
-}
-
-export function mapAllActivities(object) {
-  const actArr = [];
-  for (const property in object) {
-      if (object[property] === true || object[property] === false)
-      actArr.push(property)
-  }
-  return actArr
-}
-
 export function calcAge(dob) {
   const today = new Date();
   const birthDate = new Date(dob);

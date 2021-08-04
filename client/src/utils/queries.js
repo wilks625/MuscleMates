@@ -25,18 +25,7 @@ export const QUERY_PROFILE = gql`
       phoneNumber
       timePref
       goals
-      activities {
-        strengthTraining
-        biking
-        running
-        swimming
-        basketball
-        soccer 
-        tennis
-        rockClimbing
-        yoga
-        hiking
-        }
+      activities
     }
   }
 `;

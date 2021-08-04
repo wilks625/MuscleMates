@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Activities = require('./Activities');
 const Picture = require('./Picture');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
@@ -62,8 +61,11 @@ const userSchema = new Schema({
     type: String,
     required: false,
   },
+  activities: {
+    type: String,
+    required: false,
+  },
   picture: [Picture.schema],
-  activities: [Activities.schema],
 });
 
 // set up pre-save middleware to create password

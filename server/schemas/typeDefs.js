@@ -16,21 +16,8 @@ const typeDefs = gql`
     phoneNumber: String
     timePref: String
     goals: String
+    activities: String
     picture: [Picture]
-    activities: [Activities]
-  }
-  type Activities {
-    _id: ID
-    strengthTraining: Boolean
-    biking: Boolean
-    running: Boolean
-    swimming: Boolean
-    basketball: Boolean
-    soccer:  Boolean 
-    tennis: Boolean
-    rockClimbing: Boolean
-    yoga: Boolean
-    hiking: Boolean
   }
   type Picture {
     name: String
@@ -44,17 +31,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    activities: [Activities]
     user: User
     allUsers: [User]
   }
 
   type Mutation {
     addUser(username: String!, firstname: String!, lastname: String!, email: String!, password: String!): Auth
-    updateUser(username: String, firstname: String, lastname: String, email: String, password: String, latitude: String, longitude: String, birthday: String, pronouns: String, bio: String, phoneNumber: String, timePref: String, goals: String): User
-    updateActivities(_id: ID!): Activities
+    updateUser(username: String, firstname: String, lastname: String, email: String, password: String, latitude: String, longitude: String, birthday: String, pronouns: String, bio: String, phoneNumber: String, timePref: String, goals: String, activities: String): User
     login(email: String!, password: String!): Auth
-   
   }
 `;
 

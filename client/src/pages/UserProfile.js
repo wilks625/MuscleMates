@@ -14,7 +14,7 @@ import ActivitiesSection from '../components/ActivitiesSection'
 import Moreinfo from '../components/MoreInfo'
 import { useQuery } from '@apollo/client';
 import { QUERY_PROFILE } from '../utils/queries';
-import { numberFormat, mapTrueActivities, calcAge } from '../utils/helpers';
+import { numberFormat, calcAge } from '../utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,7 +46,6 @@ function FullWidthGrid() {
   const classes = useStyles();
   const { loading, data } = useQuery(QUERY_PROFILE);
   const profile = data?.user || {};
-  const activities = data?.user.activities || [];
   const checkData = () => {
     console.log(profile);
   }
@@ -78,7 +77,7 @@ function FullWidthGrid() {
           <Grid item xs={12} sm={6}>{loading ? (
             <div>...Loading</div>
           ) : (
-          <ActivitiesSection activities={mapTrueActivities(activities[0])} />
+          <ActivitiesSection activities={profile.activities ? (profile.activities) : (" ")} />
           )}
           </Grid>
           <Grid item xs={12} sm={6}>

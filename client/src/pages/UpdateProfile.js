@@ -18,8 +18,9 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import PhotoUpload from "../components/UploadPhotoBtn";
 import FormGroup from "@material-ui/core/FormGroup";
 import Checkbox from "@material-ui/core/Checkbox";
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PROFILE } from '../utils/queries';
+import { UPDATE_USER } from '../utils/mutations';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,43 +49,45 @@ function valuetext(value) {
 // }
 export default function FullWidthGrid() {
   const classes = useStyles();
-  const [value, setValue] = React.useState("female");
+  const { data } = useQuery(QUERY_PROFILE);
+  const profile = data?.user || {};
+  const [value, setValue] = React.useState("User");
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
     setValue(event.target.value);
     setTime({ ...state, [event.target.name]: event.target.checked });
     setValue(event.target.value);
   };
-
-  const [state, setState] = React.useState({
-    strength: true,
-    biking: false,
-    running: false,
-    swimming: false,
-    basketball: false,
-    soccer: false,
-    tennis: false,
-  });
+  const [updateUser] = useMutation(UPDATE_USER);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      console.log("SUCCESS!!!")
+    } catch (error) {
+      console.log("THERE WAS AN ERROR", error);
+    }
+  }
+  const [state, setState] = React.useState("");
   const [time, setTime] = React.useState({
-    morning: true,
+    morning: false,
     afternoon: false,
     night: false,
   });
   const {
-    strength,
+    strengthTraining,
     biking,
     running,
     swimming,
     basketball,
     soccer,
     tennis,
-    rockclimbing,
+    rockClimbing,
     yoga,
     hiking,
   } = state;
   const { morning, afternoon, night } = time;
   const checkData = () => {
-    console.log(value, state);
+    console.log(state);
   }
   return (
     <>
@@ -162,21 +165,21 @@ export default function FullWidthGrid() {
                   onChange={handleChange}
                 >
                   <FormControlLabel
-                    value="Female"
+                    value="She/Her"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
                     label="She/Her"
                   />
                   <FormControlLabel
-                    value="Male"
+                    value="He/Him"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
                     label="He/Him"
                   />
                   <FormControlLabel
-                    value="Non-Binary"
+                    value="They/Them"
                     control={
                       <Radio style={{ color: "rgba(233, 214, 107, 0.637)" }} />
                     }
@@ -204,9 +207,9 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={strength}
+                          checked={strengthTraining}
                           onChange={handleChange}
-                          name="strength"
+                          name="strengthTraining"
                         />
                       }
                       label="Strength Training"
@@ -281,9 +284,9 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={rockclimbing}
+                          checked={rockClimbing}
                           onChange={handleChange}
-                          name="rockclimbing"
+                          name="rockClimbing"
                         />
                       }
                       label="Rock Climbing"
@@ -405,7 +408,7 @@ export default function FullWidthGrid() {
             size="lg"
             variant="contained"
             color="primary"
-            href="/userProfile"
+            onClick={handleFormSubmit}
           >
             Save Changes
           </Button>
