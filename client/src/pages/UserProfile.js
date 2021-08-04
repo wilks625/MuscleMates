@@ -14,7 +14,7 @@ import ActivitiesSection from '../components/ActivitiesSection'
 import Moreinfo from '../components/MoreInfo'
 import { useQuery } from '@apollo/client';
 import { QUERY_PROFILE } from '../utils/queries';
-import { numberFormat, mapTrueActivities } from '../utils/helpers';
+import { numberFormat, mapTrueActivities, calcAge } from '../utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,18 +47,6 @@ function FullWidthGrid() {
   const { loading, data } = useQuery(QUERY_PROFILE);
   const profile = data?.user || {};
   const activities = data?.user.activities || [];
-  const calcAge = (dob) => {
-    const today = new Date();
-    const birthDate = new Date(dob);
-    var ageNow = today.getFullYear() - birthDate.getFullYear();
-    var month = today.getMonth() - birthDate.getMonth();
-    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) 
-    {
-        ageNow--;
-    }
-    console.log(ageNow);
-    return ageNow;
-  }
   const checkData = () => {
     console.log(profile);
   }
@@ -84,7 +72,7 @@ function FullWidthGrid() {
             {loading ? (
               <div>...Loading</div>
             ) : (
-          <BioSection bio={profile.bio ? (profile.bio) : (" ")} age={profile.birthday ? (profile.birthday) : (" ")} email={profile.email ? (profile.email) : (" ")} phone={profile.phoneNumber ? (numberFormat(profile.phoneNumber)) : (" ")} />
+          <BioSection bio={profile.bio ? (profile.bio) : (" ")} age={profile.birthday ? (calcAge(profile.birthday)) : (" ")} email={profile.email ? (profile.email) : (" ")} phone={profile.phoneNumber ? (numberFormat(profile.phoneNumber)) : (" ")} />
             )}
           </Grid>
           <Grid item xs={12} sm={6}>{loading ? (

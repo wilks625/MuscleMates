@@ -31,9 +31,8 @@ const useStyles = makeStyles({
     color: 'white',
     },
   });
-  const  SimpleCard = ({ bio, birthday, email, phone, location }) => {
+  const  SimpleCard = ({ bio, birthday, email, phone }) => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
     return (
   <Card className={classes.card}>
   <CardContent>
@@ -43,7 +42,7 @@ const useStyles = makeStyles({
     >
       <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>About Me</h3>
       <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>{bio}</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Birthday: </p><p>{birthday}</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Age: </p><p>{birthday}</p>
       <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Email: </p><p>{email}</p>
       <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Phone: </p><p>{phone}</p>
     </Typography>
