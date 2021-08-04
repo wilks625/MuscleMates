@@ -23,6 +23,7 @@ import Grid from './pages/Grid'
 import NavBar from './components/NavBar'
 import Matches from './pages/Matches'
 import UpdateProfile from './pages/UpdateProfile'
+import Location from './components/Location'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -61,6 +62,9 @@ function App() {
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/updateProfile" component={UpdateProfile} />
+              <Route exact path="/Location" component={Location} />
+
+              
 
               <Route exact path="/matches" component={Matches} />
               <Route component={NoMatch} />
