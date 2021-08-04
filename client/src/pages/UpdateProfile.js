@@ -18,6 +18,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import PhotoUpload from "../components/UploadPhotoBtn";
 import FormGroup from "@material-ui/core/FormGroup";
 import Checkbox from "@material-ui/core/Checkbox";
+import {useState, useEffect} from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PROFILE } from '../utils/queries';
 import { UPDATE_USER } from '../utils/mutations';
@@ -49,15 +50,18 @@ function valuetext(value) {
 // }
 export default function FullWidthGrid() {
   const classes = useStyles();
-  const { data } = useQuery(QUERY_PROFILE);
+  const { data, loading, error } = useQuery(QUERY_PROFILE);
+  const [state, setState] = React.useState();
+  useEffect(() => {
+    if(loading === false && data){
+        setState(data);
+    }
+}, [loading, data])
+
   const profile = data?.user || {};
-  const [value, setValue] = React.useState("User");
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    setValue(event.target.value);
-    setTime({ ...state, [event.target.name]: event.target.checked });
-    setValue(event.target.value);
-  };
+    setState({ ...state, [event.target.name]: event.target.value });
+    };
   const [updateUser] = useMutation(UPDATE_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -67,27 +71,8 @@ export default function FullWidthGrid() {
       console.log("THERE WAS AN ERROR", error);
     }
   }
-  const [state, setState] = React.useState("");
-  const [time, setTime] = React.useState({
-    morning: false,
-    afternoon: false,
-    night: false,
-  });
-  const {
-    strengthTraining,
-    biking,
-    running,
-    swimming,
-    basketball,
-    soccer,
-    tennis,
-    rockClimbing,
-    yoga,
-    hiking,
-  } = state;
-  const { morning, afternoon, night } = time;
   const checkData = () => {
-    console.log(state);
+    console.log(profile, state);
   }
   return (
     <>
@@ -161,7 +146,7 @@ export default function FullWidthGrid() {
                 <RadioGroup
                   aria-label="Pronoun"
                   name="Pronoun1"
-                  value={value}
+                  value={state.user.pronouns}
                   onChange={handleChange}
                 >
                   <FormControlLabel
@@ -202,118 +187,17 @@ export default function FullWidthGrid() {
                   >
                     Activities
                   </FormLabel>
-                  <FormGroup style={{ color: "white" }}>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={strengthTraining}
-                          onChange={handleChange}
-                          name="strengthTraining"
-                        />
-                      }
-                      label="Strength Training"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={biking}
-                          onChange={handleChange}
-                          name="biking"
-                        />
-                      }
-                      label="Biking"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={running}
-                          onChange={handleChange}
-                          name="running"
-                        />
-                      }
-                      label="Running"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={swimming}
-                          onChange={handleChange}
-                          name="swimming"
-                        />
-                      }
-                      label="Swimming"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={basketball}
-                          onChange={handleChange}
-                          name="basketball"
-                        />
-                      }
-                      label="Basketball"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={soccer}
-                          onChange={handleChange}
-                          name="soccer"
-                        />
-                      }
-                      label="Soccer"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={tennis}
-                          onChange={handleChange}
-                          name="tennis"
-                        />
-                      }
-                      label="Tennis"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={rockClimbing}
-                          onChange={handleChange}
-                          name="rockClimbing"
-                        />
-                      }
-                      label="Rock Climbing"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={yoga}
-                          onChange={handleChange}
-                          name="yoga"
-                        />
-                      }
-                      label="Yoga"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={hiking}
-                          onChange={handleChange}
-                          name="hiking"
-                        />
-                      }
-                      label="Hiking"
-                    />
-                  </FormGroup>
+                  <Grid item xs={12} sm={4}>
+              <TextField
+                style={{ backgroundColor: "white" }}
+                id="outlined-textarea"
+                label="Activity Goals"
+                placeholder="Get stronger!"
+                multiline
+                rows={4}
+                // variant="outlined"
+              />
+            </Grid>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={4}>
@@ -337,7 +221,7 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={morning}
+                          checked={false}
                           onChange={handleChange}
                           name="morning"
                         />
@@ -348,7 +232,7 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={afternoon}
+                          checked={false}
                           onChange={handleChange}
                           name="afternoon"
                         />
@@ -359,7 +243,7 @@ export default function FullWidthGrid() {
                       control={
                         <Checkbox
                           style={{ color: "rgba(233, 214, 107, 0.637)" }}
-                          checked={night}
+                          checked={false}
                           onChange={handleChange}
                           name="night"
                         />
