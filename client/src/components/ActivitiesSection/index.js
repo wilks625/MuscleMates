@@ -5,6 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Activities from '../Activities';
+
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -30,7 +32,7 @@ const useStyles = makeStyles({
     color:'white',
  },
 });
-const SimpleCard = () => {
+const SimpleCard = ({ activities }) => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   return (
@@ -41,9 +43,7 @@ const SimpleCard = () => {
         gutterBottom
       >
         <h3 className="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>My Activities</h3>
-        <p className="font-weight-bold">Running</p>
-        <p className="font-weight-bold">Swimming</p>
-        <p className="font-weight-bold">Biking</p>
+        <Activities className="font-weight-bold" activities={activities} />
       </Typography>
     </CardContent>
   </Card>

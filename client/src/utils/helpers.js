@@ -5,12 +5,20 @@ export function numberFormat(number) {
 }
 
 export function mapTrueActivities(object) {
-    const result = Object.keys(object).map((key) => String(key));
-    result.shift();
-    return result
+  const actArr = [];
+  for (const property in object) {
+      if (object[property] === true) {
+        actArr.push(property)
+      }
+  }
+    return actArr
 }
 
 export function mapAllActivities(object) {
-  const data = Object.value(object);
-  return data
+  const actArr = [];
+  for (const property in object) {
+      if (object[property] === true || object[property] === false)
+      actArr.push(property)
+  }
+  return actArr
 }
