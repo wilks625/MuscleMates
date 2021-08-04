@@ -19,6 +19,12 @@ export const ADD_USER = gql`
     $email: String!
     $password: String!
     $location: Int!
+    $age: String
+    $gender: String
+    $bio: String
+    $snapchat: String
+    $instagram: String
+    $phoneNumber: String
   ) {
     addUser(
       username: $username
@@ -27,6 +33,12 @@ export const ADD_USER = gql`
       email: $email
       password: $password
       location: $location
+      age: $age
+      gender: $gender
+      bio: $bio
+      snapchat: $snapchat
+      instagram: $instagram
+      phoneNumber: $phoneNumber
     ) {
       token
       user {
@@ -34,4 +46,41 @@ export const ADD_USER = gql`
       }
     }
   }
+`;
+
+export const UPDATE_USER = gql`
+mutation updateUser(
+  $username: String
+  $firstname: String
+  $lastname: String
+  $email: String
+  $password: String
+  $location: Int
+  $age: String
+  $gender: String
+  $bio: String
+  $snapchat: String
+  $instagram: String
+  $phoneNumber: String
+) {
+  updateUser(
+    username: $username
+    firstname: $firstname
+    lastname: $lastname
+    email: $email
+    password: $password
+    location: $location
+    age: $age
+    gender: $gender
+    bio: $bio
+    snapchat: $snapchat
+    instagram: $instagram
+    phoneNumber: $phoneNumber
+  ) {
+    user {
+      _id
+      username
+    }
+  }
+}
 `;

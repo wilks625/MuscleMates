@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     color: 'white',
     },
   });
-  const  SimpleCard = () => {
+  const  SimpleCard = ({ bio, age, email, phone, location }) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
@@ -42,11 +42,11 @@ const useStyles = makeStyles({
       gutterBottom
     >
       <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>About Me</h3>
-      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>This is my bio. I like to lift.</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Age: </p><p>32</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Email: </p><p>test@tesing.com</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Phone: </p><p>(804)123-4567</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Location: </p><p>Richmond</p>
+      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>{bio}</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Age: </p><p>{age}</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Email: </p><p>{email}</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Phone: </p><p>{phone}</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Location: </p><p>{location}</p>
     </Typography>
   </CardContent>
   </Card>

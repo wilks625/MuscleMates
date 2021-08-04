@@ -12,6 +12,10 @@ import ProfilePic from '../components/ProfilePic'
 import BioSection from '../components/BioSection'
 import ActivitiesSection from '../components/ActivitiesSection'
 import Moreinfo from '../components/MoreInfo'
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILE } from '../utils/queries';
+import { numberFormat, mapTrueActivities } from '../utils/helpers';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -41,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
 function FullWidthGrid() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  const { loading, data } = useQuery(QUERY_PROFILE);
+  const profile = data?.user || {};
+  const activities = data?.user.activities || [];
+  const checkData = () => {
+    console.log(mapTrueActivities(activities[0]));
+  }
   return (
     <Container maxWidth="md">
       <Container style={{fontSize: '60px'}}>
@@ -49,7 +59,7 @@ function FullWidthGrid() {
         </div>
         {'  '}
         <div style={{fontFamily: "permanent marker", color:'rgba(233, 214, 107, 0.637)', textAlign:'center', display: 'inline-block'}}>
-          Jacob Black
+         {profile.firstname} {profile.lastname}
         </div>
       </Container>
       <div className={classes.root}>
@@ -58,10 +68,17 @@ function FullWidthGrid() {
             <ProfilePic />
           </Grid>
           <Grid item xs={12} sm={6}>
-          <BioSection />
+            {loading ? (
+              <div>...Loading</div>
+            ) : (
+          <BioSection bio={profile.bio} age={profile.age} email={profile.email} phone={numberFormat(profile.phoneNumber)} location={profile.location} />
+            )}
           </Grid>
-          <Grid item xs={12} sm={6}>
-          <ActivitiesSection />
+          <Grid item xs={12} sm={6}>{loading ? (
+            <div>...Loading</div>
+          ) : (
+          <ActivitiesSection activities={mapTrueActivities(activities[0])} />
+          )}
           </Grid>
           <Grid item xs={12} sm={6}>
             <Moreinfo />
@@ -71,6 +88,7 @@ function FullWidthGrid() {
       <CardActions>
         <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign:'center'}} size="lg" variant="contained" color="primary"  href="/updateProfile">Update Profile Information</Button>
         <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
+        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" onClick={checkData} >Check Data</Button>
       </CardActions>
     </Container>
   );
