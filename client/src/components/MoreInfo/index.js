@@ -43,7 +43,7 @@ const  SimpleCard = () => {
     <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Pronoun:</p> <p>He/Him</p>
     <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Workout Time Preference:</p> <p>Morning</p>
     <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Birthday:</p> <p>December 12, 1989</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Activity Gols:</p><p>Become stronger</p>
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Goals:</p><p>Become stronger</p>
   </Typography>
 </CardContent>
 </Card>

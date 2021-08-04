@@ -53,6 +53,15 @@ const userSchema = new Schema({
     type: String,
     required: false,
   },
+  timePref: {
+    type: String,
+    enum: ["Morning", "Afternoon", "Evening"],
+    required: false,
+  },
+  goals: {
+    type: String,
+    required: false,
+  },
   picture: [Picture.schema],
   activities: [Activities.schema],
 });

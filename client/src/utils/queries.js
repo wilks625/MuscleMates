@@ -7,8 +7,7 @@ export const QUERY_USERS = gql`
       firstname
       lastname
       email
-      location
-      age
+      birthday
       }
     }
 `;
@@ -19,14 +18,13 @@ export const QUERY_PROFILE = gql`
       username
       firstname
       lastname
-      location
-      age
-      gender
-      bio
-      snapchat
-      instagram
-      phoneNumber
       email
+      birthday
+      pronouns
+      bio
+      phoneNumber
+      timePref
+      goals
       activities {
         strengthTraining
         biking

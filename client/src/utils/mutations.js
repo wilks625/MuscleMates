@@ -41,13 +41,14 @@ mutation updateUser(
   $lastname: String
   $email: String
   $password: String
-  $location: Int
-  $age: String
-  $gender: String
+  $latitude: String
+  $longitude: String
+  $birthday: String
+  $pronouns: String
   $bio: String
-  $snapchat: String
-  $instagram: String
   $phoneNumber: String
+  $timePref: String
+  $goals: String
 ) {
   updateUser(
     username: $username
@@ -55,13 +56,14 @@ mutation updateUser(
     lastname: $lastname
     email: $email
     password: $password
-    location: $location
-    age: $age
-    gender: $gender
+    latitude: $latitude
+    longitude: $longitude
+    birthday: $birthday
+    pronouns: $pronouns
     bio: $bio
-    snapchat: $snapchat
-    instagram: $instagram
     phoneNumber: $phoneNumber
+    timePref: $timePref
+    goals: $goals
   ) {
     user {
       _id

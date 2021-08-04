@@ -47,6 +47,21 @@ function FullWidthGrid() {
   const { loading, data } = useQuery(QUERY_PROFILE);
   const profile = data?.user || {};
   const activities = data?.user.activities || [];
+  const calcAge = (dob) => {
+    const today = new Date();
+    const birthDate = new Date(dob);
+    var ageNow = today.getFullYear() - birthDate.getFullYear();
+    var month = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        ageNow--;
+    }
+    console.log(ageNow);
+    return ageNow;
+  }
+  const checkData = () => {
+    console.log(profile);
+  }
   return (
     <Container maxWidth="md">
       <Container style={{fontSize: '60px'}}>
@@ -54,9 +69,11 @@ function FullWidthGrid() {
         WELCOME,
         </div>
         {'  '}
+        {loading ? (<div>...Loading</div>) : (
         <div style={{fontFamily: "permanent marker", color:'rgba(233, 214, 107, 0.637)', textAlign:'center', display: 'inline-block'}}>
-         {profile.firstname} {profile.lastname}
+          {profile.firstname} {profile.lastname}
         </div>
+  )}
       </Container>
       <div className={classes.root}>
         <Grid container  spacing={3}>
@@ -67,7 +84,7 @@ function FullWidthGrid() {
             {loading ? (
               <div>...Loading</div>
             ) : (
-          <BioSection bio={profile.bio} age={profile.age} email={profile.email} phone={numberFormat(profile.phoneNumber)} location={profile.location} />
+          <BioSection bio={profile.bio ? (profile.bio) : (" ")} age={profile.birthday ? (profile.birthday) : (" ")} email={profile.email ? (profile.email) : (" ")} phone={profile.phoneNumber ? (numberFormat(profile.phoneNumber)) : (" ")} />
             )}
           </Grid>
           <Grid item xs={12} sm={6}>{loading ? (
@@ -84,6 +101,7 @@ function FullWidthGrid() {
       <CardActions>
         <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign:'center'}} size="lg" variant="contained" color="primary"  href="/updateProfile">Update Profile Information</Button>
         <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
+        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" onClick={checkData}>Check Data</Button>
       </CardActions>
     </Container>
   );
