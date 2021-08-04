@@ -30,6 +30,7 @@
     "mongoose-autopopulate": "^0.14.0",
     "mongoose-geojson-schema": "^2.1.7",
     "react-bootstrap": "^2.0.0-beta.4",
+    "react-geolocated": "^3.2.0",
     "react-query": "^3.19.1"
   }
 }
