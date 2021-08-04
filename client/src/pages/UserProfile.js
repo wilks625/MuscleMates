@@ -12,6 +12,10 @@ import ProfilePic from '../components/ProfilePic'
 import BioSection from '../components/BioSection'
 import ActivitiesSection from '../components/ActivitiesSection'
 import Moreinfo from '../components/MoreInfo'
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILE } from '../utils/queries';
+import { numberFormat } from '../utils/helpers';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -45,7 +49,7 @@ function FullWidthGrid() {
   const profile = data?.user || {};
   const activities = data?.user.activities || [];
   const checkData = () => {
-    console.log(mapTrueActivities(activities[0]));
+    console.log(activities[0]);
   }
   return (
     <Container maxWidth="md">
@@ -55,7 +59,7 @@ function FullWidthGrid() {
         </div>
         {'  '}
         <div style={{fontFamily: "permanent marker", color:'rgba(233, 214, 107, 0.637)', textAlign:'center', display: 'inline-block'}}>
-          Jacob Black
+         {profile.firstname} {profile.lastname}
         </div>
       </Container>
       <div className={classes.root}>
@@ -64,7 +68,11 @@ function FullWidthGrid() {
             <ProfilePic />
           </Grid>
           <Grid item xs={12} sm={6}>
-          <BioSection />
+            {loading ? (
+              <div>...Loading</div>
+            ) : (
+          <BioSection bio={profile.bio} age={profile.age} email={profile.email} phone={numberFormat(profile.phoneNumber)} location={profile.location} />
+            )}
           </Grid>
           <Grid item xs={12} sm={6}>
           <ActivitiesSection />
