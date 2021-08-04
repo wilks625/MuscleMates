@@ -8,6 +8,8 @@ const typeDefs = gql`
     lastname: String
     email: String
     location: Int
+    latitude: String
+    longitude: String
     age: Int
     gender: String
     bio: String
