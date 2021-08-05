@@ -41,12 +41,12 @@ const useStyles = makeStyles({
       className={classes.title}
       gutterBottom
     >
-      <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>About Me</h3>
-      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>This is my matches bio. I like to lift too. :)</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Age: </p><p>32</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Email: </p><p>test@tesing.com</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Phone: </p><p>(804)123-4567</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Location: </p><p>Richmond</p>
+      <h3 class="mt-3 text-center" style={{fontFamily:'Arial Narrow'}}>About Me</h3>
+      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Bio: </p><p>This is my matches bio. I like to lift too. :)</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Age: </p><p>32</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Email: </p><p>test@tesing.com</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Phone: </p><p>(804)123-4567</p>
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Location: </p><p>Richmond</p>
     </Typography>
   </CardContent>
   </Card>

@@ -40,7 +40,7 @@ const SimpleCard = () => {
         className={classes.title}
         gutterBottom
       >
-        <h3 className="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>My Activities</h3>
+        <h3 className="mt-3 text-center" style={{fontFamily:'Arial Narrow'}}>My Activities</h3>
         <p className="font-weight-bold">lifting</p>
         <p className="font-weight-bold">running</p>
         <p className="font-weight-bold">yoga</p>

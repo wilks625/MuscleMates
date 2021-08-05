@@ -19,19 +19,19 @@ const HomepageContainerpic = () => {
             <Container className="subheader" >
               <div className="slogan" >
               <h1 style={{ fontSize: '60px', fontFamily: "permanent marker", color: 'white' }}>Workout With me</h1>
-              <h2 style={{ fontFamily: 'Encode Sans SC', color: 'white' }}>JOIN TODAY!</h2>
+              <h2 style={{ fontFamily: 'Arial Narrow', color: 'white' }}>JOIN TODAY!</h2>
               </div>
             </Container>
             <br></br>
             <div className="homebutton">
             <Link to="/Login">
-              <Button className="loginbutton" style={{ fontFamily: 'Encode Sans SC' }} variant="secondary" size="lg">
+              <Button className="loginbutton" style={{ fontFamily: 'Arial Narrow' }} variant="secondary" size="lg">
                 Log on
               </Button>
             </Link>
             {" "}
             <Link to="Signup">
-              <Button style={{ fontFamily: 'Encode Sans SC' }} variant="secondary" size="lg">
+              <Button style={{ fontFamily: 'Arial Narrow' }} variant="secondary" size="lg">
                 Sign up
               </Button>
             </Link>

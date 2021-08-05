@@ -17,7 +17,7 @@ const typeDefs = gql`
     timePref: String
     goals: String
     activities: String
-    picture: [Picture]
+    
   }
   type Picture {
     name: String

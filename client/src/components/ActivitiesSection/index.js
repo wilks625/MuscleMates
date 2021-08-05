@@ -5,6 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILE } from '../../utils/queries';
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +36,12 @@ const useStyles = makeStyles({
 const SimpleCard = ({ activities }) => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+
+  const { loading, data } = useQuery(QUERY_PROFILE);
+  const profile = data?.user || {};
+  const checkData = () => {
+    console.log(profile);
+  }
   return (
     <Card className={classes.card}>
     <CardContent>
@@ -41,8 +49,8 @@ const SimpleCard = ({ activities }) => {
         className={classes.title}
         gutterBottom
       >
-        <h3 className="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>My Activities</h3>
-        <p>{activities}</p>
+        <h3 className="mt-3 text-center" style={{fontFamily:'Arial Narrow'}}>My Activities</h3>
+        <p>{profile.activities}</p>
       </Typography>
     </CardContent>
   </Card>

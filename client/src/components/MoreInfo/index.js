@@ -5,6 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILE } from '../../utils/queries';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -32,6 +34,11 @@ const useStyles = makeStyles({
 const  SimpleCard = () => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  const { loading, data } = useQuery(QUERY_PROFILE);
+  const profile = data?.user || {};
+  const checkData = () => {
+    console.log(profile);
+  }
   return (
 <Card className={classes.card}>
 <CardContent>
@@ -39,11 +46,11 @@ const  SimpleCard = () => {
     className={classes.title}
     gutterBottom
   >
-    <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>More Info:</h3>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Pronoun:</p> <p>He/Him</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Workout Time Preference:</p> <p>Morning</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Birthday:</p> <p>December 12, 1989</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Goals:</p><p>Become stronger</p>
+    <h3 class="mt-3 text-center" style={{fontFamily:'Arial Narrow'}}>More Info:</h3>
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Pronoun:</p> {profile.pronouns}
+    {/* <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Workout Time Preference:</p>  */}
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Birthday:</p> {profile.birthday}
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Goals:</p> {profile.goals}
   </Typography>
 </CardContent>
 </Card>

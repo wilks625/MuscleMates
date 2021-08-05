@@ -39,11 +39,11 @@ const  SimpleCard = () => {
     className={classes.title}
     gutterBottom
   >
-    <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>More Info:</h3>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Pronoun:</p> <p>He/Him</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Workout Time Preference:</p> <p>Night</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Birthday:</p> <p>March 15, 1989</p>
-    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Activity Gols:</p><p>Build endurance</p>
+    <h3 class="mt-3 text-center" style={{fontFamily:'Arial Narrow'}}>More Info:</h3>
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Pronoun:</p> <p>He/Him</p>
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Workout Time Preference:</p> <p>Night</p>
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Birthday:</p> <p>March 15, 1989</p>
+    <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Activity Gols:</p><p>Build endurance</p>
   </Typography>
 </CardContent>
 </Card>

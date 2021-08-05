@@ -30,11 +30,11 @@ function Login(props) {
   return (
     <div  style={{backgroundColor:'rgb(30, 30, 30)', height: '100vh'}}>
     <Container className="logininfo">
-      <Link style={{fontFamily:'Encode Sans SC', color: "gold"}} to="/signup">← Go to Signup</Link>
+      <Link style={{fontFamily:'Arial Narrow', color: "gold"}} to="/signup">← Go to Signup</Link>
       <h2 style={{fontSize: '60px', fontFamily: "permanent marker",  color: 'white'}}>Login</h2>
-      <form style={{fontFamily:'Encode Sans SC', color: 'white'}} onSubmit={handleFormSubmit}>
+      <form style={{fontFamily:'Arial Narrow', color: 'white'}} onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label id="loginlabel" style={{fontFamily:'Encode Sans SC', color: 'white'}} htmlFor="email">Email address:</label>
+          <label id="loginlabel" style={{fontFamily:'Arial Narrow', color: 'white'}} htmlFor="email">Email address:</label>
           <input style={{color: "black"}}
             placeholder="youremail@test.com"
             name="email"
@@ -59,7 +59,7 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <Button  style={{fontFamily:'Encode Sans SC'}} variant="secondary" size="lg" type="submit">Submit</Button>
+          <Button  style={{fontFamily:'Arial Narrow'}} variant="secondary" size="lg" type="submit">Submit</Button>
         </div>
       </form>
     </Container>

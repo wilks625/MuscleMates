@@ -51,7 +51,7 @@ function FullWidthGrid() {
     return (
         <Container maxWidth="md">
             <Container >
-                <div style={{ fontSize: '30px' , color: 'white', textAlign: 'center', fontFamily: 'Encode Sans SC', display: 'inline-block' }}>
+                <div style={{ fontSize: '30px' , color: 'white', textAlign: 'center', fontFamily: 'Arial Narrow', display: 'inline-block' }}>
                     YOU'VE GOT A MATCH,
           </div>
                 {'  '}
@@ -76,8 +76,8 @@ function FullWidthGrid() {
                     </Grid>
         </div>
                 <CardActions>
-                    <Button className="btn" style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign: 'center' }} size="lg" variant="contained" color="primary" href="/updateProfile">Muscle Mates</Button>
-                    <Button className="btn" style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC' }} size="lg" variant="contained" color="primary" href="/UserProfile">My Profile</Button>
+                    <Button className="btn" style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }} size="lg" variant="contained" color="primary" href="/updateProfile">Muscle Mates</Button>
+                    <Button className="btn" style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow' }} size="lg" variant="contained" color="primary" href="/UserProfile">My Profile</Button>
                 </CardActions>
       </Container>
     );

@@ -58,16 +58,33 @@ export default function FullWidthGrid() {
   }, [loading, data]);
 
   const profile = data?.user || {};
+  
+
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
   const [updateUser] = useMutation(UPDATE_USER);
+  const [formState, setFormState] = useState({ username: profile.username, firstname: profile.firstname, lastname: profile.lastname, email: profile.email, password: profile.password, latitude: '', longitude: '', birthday: '', pronouns: '', bio: '', phoneNumber: '', timePref: '', goals: '', activities: '' });
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log(formState);
+      const mutationResponse = await updateUser({
+        variables: {
+          ...formState,
+          bio: formState.bio
+        },
+      });
+
       console.log("SUCCESS!!!");
     } catch (error) {
       console.log("THERE WAS AN ERROR", error);
+      console.log(JSON.stringify(error, null, 2));
     }
   };
   const checkData = () => {
@@ -97,7 +114,8 @@ export default function FullWidthGrid() {
             <Grid item xs={12} sm={4}>
               <TextField
                 style={{ backgroundColor: "white" }}
-                id="outlined-textarea"
+                name="goals"
+                onChange={handleChange}
                 label="Activity Goals"
                 placeholder="Get stronger!"
                 multiline
@@ -109,7 +127,8 @@ export default function FullWidthGrid() {
             <Grid item xs={12} sm={4}>
               <TextField
                 style={{ backgroundColor: "white" }}
-                id="outlined-textarea"
+                name="bio"
+                onChange={handleChange}
                 label="Bio"
                 placeholder="I like to lift things up and place them back down"
                 multiline
@@ -122,7 +141,8 @@ export default function FullWidthGrid() {
               <form className={classes.container} noValidate>
                 <TextField
                   style={{ backgroundColor: "white" }}
-                  id="date"
+                  name="birthday"
+                  onChange={handleChange}
                   label="Birthday"
                   type="date"
                   defaultValue="1995-05-24"
@@ -140,7 +160,7 @@ export default function FullWidthGrid() {
                   style={{
                     color: "white",
                     fontSize: "35px",
-                    fontFamily: "Encode Sans SC",
+                    fontFamily: "Arial Narrow",
                   }}
                   component="legend"
                 >
@@ -148,7 +168,7 @@ export default function FullWidthGrid() {
                 </FormLabel>
                 <RadioGroup
                   aria-label="Pronoun"
-                  name="Pronoun1"
+                  name="pronouns"
                   // value={state.user.pronouns}
                   onChange={handleChange}
                 >
@@ -186,7 +206,7 @@ export default function FullWidthGrid() {
                     style={{
                       color: "white",
                       fontSize: "35px",
-                      fontFamily: "Encode Sans SC",
+                      fontFamily: "Arial Narrow",
                     }}
                     component="legend"
                   >
@@ -196,7 +216,8 @@ export default function FullWidthGrid() {
 
                     <TextField
                       style={{ backgroundColor: "white" }}
-                      id="outlined-textarea"
+                      name="activities"
+                      onChange={handleChange}
                       label="Activity Goals"
                       placeholder="Get stronger!"
                       multiline
@@ -206,16 +227,19 @@ export default function FullWidthGrid() {
                 </FormControl>
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              {/* <Grid item xs={12} sm={4}>
                 <FormControl
                   component="fieldset"
                   className={classes.formControl}
+                  name="timePref"
+                  onChange={handleChange}
+
                 >
                   <FormLabel
                     style={{
                       color: "white",
                       fontSize: "35px",
-                      fontFamily: "Encode Sans SC",
+                      fontFamily: "Arial Narrow",
                     }}
                     component="legend"
                   >
@@ -258,16 +282,16 @@ export default function FullWidthGrid() {
                     />
                   </FormGroup>
                 </FormControl>
-              </Grid>
+              </Grid> */}
 
-              <Grid item xs={12} sm={12}>
+              {/* <Grid item xs={12} sm={12}>
               <div className={classes.root}>
                 {" "}
                 <label
                   style={{
                     color: "white",
                     fontSize: "35px",
-                    fontFamily: "Encode Sans SC",
+                    fontFamily: "Arial Narrow",
                   }}
                   id="loginlabel"
                   htmlFor="pwd"
@@ -282,7 +306,7 @@ export default function FullWidthGrid() {
                   id="pwd"
                 />
               </div>
-                  </Grid>
+                  </Grid> */}
               
               <Grid item xs={12} sm={12}>
                 <PhotoUpload />
@@ -296,7 +320,7 @@ export default function FullWidthGrid() {
             className="btn"
             style={{
               backgroundColor: "rgba(233, 214, 107, 0.637)",
-              fontFamily: "Encode Sans SC",
+              fontFamily: "Arial Narrow",
             }}
             size="lg"
             variant="contained"
@@ -309,7 +333,7 @@ export default function FullWidthGrid() {
             className="btn"
             style={{
               backgroundColor: "rgba(233, 214, 107, 0.637)",
-              fontFamily: "Encode Sans SC",
+              fontFamily: "Arial Narrow",
             }}
             size="lg"
             variant="contained"
@@ -322,7 +346,7 @@ export default function FullWidthGrid() {
             className="btn"
             style={{
               backgroundColor: "rgba(233, 214, 107, 0.637)",
-              fontFamily: "Encode Sans SC",
+              fontFamily: "Arial Narrow",
             }}
             size="lg"
             variant="contained"

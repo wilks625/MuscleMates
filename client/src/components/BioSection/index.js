@@ -6,6 +6,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILE } from '../../utils/queries';
+// import { numberFormat, calcAge } from '../utils/helpers';
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
@@ -31,8 +34,14 @@ const useStyles = makeStyles({
     color: 'white',
     },
   });
+  
   const  SimpleCard = ({ bio, birthday, email, phone }) => {
     const classes = useStyles();
+    const { loading, data } = useQuery(QUERY_PROFILE);
+    const profile = data?.user || {};
+    const checkData = () => {
+      console.log(profile);
+    }
     return (
   <Card className={classes.card}>
   <CardContent>
@@ -40,11 +49,11 @@ const useStyles = makeStyles({
       className={classes.title}
       gutterBottom
     >
-      <h3 class="mt-3 text-center" style={{fontFamily:'Encode Sans SC'}}>About Me</h3>
-      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Encode Sans SC', fontWeight:'bold'}} >Bio: </p><p>{bio}</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Age: </p><p>{birthday}</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Email: </p><p>{email}</p>
-      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Encode Sans SC', fontWeight:'bold'}}>Phone: </p><p>{phone}</p>
+      <h3 class="mt-3 text-center" style={{fontFamily:'Arial Narrow'}}>About Me</h3>
+      <p class="font-weight-bold" style={{fontSize:'20px', fontFamily:'Arial Narrow', fontWeight:'bold'}} >Bio: </p><p>{profile.bio}</p>
+      {/* <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Birthday: </p><p>{birthday}</p> */}
+      <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Email: </p><p>{profile.email}</p>
+      {/* <p class="font-weight-bold" style={{fontSize:'20px',fontFamily:'Arial Narrow', fontWeight:'bold'}}>Phone: </p><p>{phone}</p> */}
     </Typography>
   </CardContent>
   </Card>
