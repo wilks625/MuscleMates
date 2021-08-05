@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     // width: "90%",
   },
 });
-export default function ImgMediaCard() {
+export default function ImgMediaCard({ match }) {
   const classes = useStyles();
   return (
       <div>

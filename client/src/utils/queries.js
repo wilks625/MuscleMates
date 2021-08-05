@@ -6,8 +6,11 @@ export const QUERY_USERS = gql`
       username
       firstname
       lastname
-      email
       birthday
+      pronouns
+      bio
+      activities
+      email
       }
     }
 `;
