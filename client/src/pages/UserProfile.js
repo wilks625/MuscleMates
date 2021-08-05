@@ -88,7 +88,6 @@ function FullWidthGrid() {
       <CardActions>
         <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign:'center'}} size="lg" variant="contained" color="primary"  href="/updateProfile">Update Profile Information</Button>
         <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow'}} size="lg" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
-        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow'}} size="lg" variant="contained" color="primary" onClick={checkData}>Check Data</Button>
       </CardActions>
     </Container>
   );
