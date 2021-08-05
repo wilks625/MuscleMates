@@ -22,10 +22,11 @@
 
   `NPM` all dependencies: `Apollo Server client`, `Graphql`, `Express.js server`, `React`, `React-DOM`, `react bootstrap`, `geolocation-utils` and `dotenv`.</br>
 
-  Technologies: `MERN stack single-page application`, `Node.js and Express.js server`, `MongoDB and the Mongoose ODM for the database`, `queries and mutations for retrieving, adding, updating, and deleting data` and `deployed using Heroku (with data)`.
+  Technologies: `MERN stack single-page application`, `Node.js and Express.js server`, `MongoDB and the Mongoose ODM for the database`, `queries and mutations for retrieving, adding, updating, and deleting data`, `Material UI`
+ and `deployed using Heroku (with data)`.
 
   ## Usage
-  
+
   Help user to get match mate for work out together.
 
   ## Links and Screenshots
