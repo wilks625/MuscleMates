@@ -67,10 +67,8 @@ mutation updateUser(
     goals: $goals
     activities: $activities
   ) {
-    user {
       _id
       username
-    }
   }
 }
 `;

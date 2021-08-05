@@ -37,9 +37,9 @@ function Signup(props) {
   return (
     <div  style={{backgroundColor:'rgb(30, 30, 30)', height: '100vh'}}>
     <Container className="signupinfo">
-      <Link style={{fontFamily:'Encode Sans SC', color: "gold"}} to="/login">← Go to Login</Link>
+      <Link style={{fontFamily:'Arial Narrow', color: "gold"}} to="/login">← Go to Login</Link>
       <h2 style={{fontSize: '60px', fontFamily: "permanent marker",  color: 'white'}} >Signup</h2>
-      <form style={{fontFamily:'Encode Sans SC', color: 'white'}}  className="signupform" onSubmit={handleFormSubmit}>
+      <form style={{fontFamily:'Arial Narrow', color: 'white'}}  className="signupform" onSubmit={handleFormSubmit}>
       <div className="flex-row space-between my-2">
           <label id="signuplabel" htmlFor="username">Username:</label>
           <input style={{color: "black"}}
@@ -92,7 +92,7 @@ function Signup(props) {
           />
         </div>
         <div className="signupbutton flex-row flex-end">
-          <Button style={{fontFamily:'Encode Sans SC'}} variant="secondary" size="lg" type="submit">Submit</Button>
+          <Button style={{fontFamily:'Arial Narrow'}} variant="secondary" size="lg" type="submit">Submit</Button>
         </div>
       </form>
     </Container>

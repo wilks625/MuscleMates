@@ -26,7 +26,7 @@ export default function ImgMediaCard() {
   return (
       <div>
         <Container >
-        <div style={{ fontSize: '30px' , color: 'white', textAlign: 'center', fontFamily: 'Encode Sans SC', display: 'inline-block' }}>
+        <div style={{ fontSize: '30px' , color: 'white', textAlign: 'center', fontFamily: 'Arial Narrow', display: 'inline-block' }}>
                     YOUR
           </div>
                 {'   '}
@@ -44,7 +44,7 @@ export default function ImgMediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent  >
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Encode Sans SC', fontSize:'40px'}}>
+          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
             Jacob Black
           </Typography>
           <Typography >
@@ -53,7 +53,7 @@ export default function ImgMediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign: 'center' }}>
+        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }}>
           More Info
         </Button>
       </CardActions>
@@ -66,7 +66,7 @@ export default function ImgMediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Encode Sans SC', fontSize:'40px'}}>
+          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
             Jacob Black
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -75,7 +75,7 @@ export default function ImgMediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign: 'center' }} >
+        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }} >
           More Info
         </Button>
       </CardActions>
@@ -88,7 +88,7 @@ export default function ImgMediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Encode Sans SC', fontSize:'40px'}}>
+          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
             Jacob Black
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -97,7 +97,7 @@ export default function ImgMediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign: 'center' }} >
+        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }} >
           More Info
         </Button>
       </CardActions>
@@ -110,7 +110,7 @@ export default function ImgMediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Encode Sans SC', fontSize:'40px'}}>
+          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
             Jacob Black
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -119,7 +119,7 @@ export default function ImgMediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC', textAlign: 'center' }}>
+        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }}>
           More Info
         </Button>
       </CardActions>

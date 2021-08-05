@@ -25,7 +25,7 @@ const  UploadButtons = () => {
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} variant="contained" color="primary" component="span">
+        <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow'}} variant="contained" color="primary" component="span">
           Photo Upload
         </Button>
       </label>
