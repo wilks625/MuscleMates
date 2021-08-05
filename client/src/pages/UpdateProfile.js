@@ -18,11 +18,10 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import PhotoUpload from "../components/UploadPhotoBtn";
 import FormGroup from "@material-ui/core/FormGroup";
 import Checkbox from "@material-ui/core/Checkbox";
-import {useState, useEffect} from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_PROFILE } from '../utils/queries';
-import { UPDATE_USER } from '../utils/mutations';
-
+import { useState, useEffect } from "react";
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_PROFILE } from "../utils/queries";
+import { UPDATE_USER } from "../utils/mutations";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,27 +52,27 @@ export default function FullWidthGrid() {
   const { data, loading, error } = useQuery(QUERY_PROFILE);
   const [state, setState] = React.useState();
   useEffect(() => {
-    if(loading === false && data){
-        setState(data);
+    if (loading === false && data) {
+      setState(data);
     }
-}, [loading, data])
+  }, [loading, data]);
 
   const profile = data?.user || {};
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.value });
-    };
+  };
   const [updateUser] = useMutation(UPDATE_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log("SUCCESS!!!")
+      console.log("SUCCESS!!!");
     } catch (error) {
       console.log("THERE WAS AN ERROR", error);
     }
-  }
+  };
   const checkData = () => {
     console.log(profile, state);
-  }
+  };
   return (
     <>
       <div>
@@ -94,6 +93,7 @@ export default function FullWidthGrid() {
       >
         <div className={classes.root + " " + classes.card}>
           <Grid container spacing={3}>
+
             <Grid item xs={12} sm={4}>
               <TextField
                 style={{ backgroundColor: "white" }}
@@ -105,6 +105,7 @@ export default function FullWidthGrid() {
                 // variant="outlined"
               />
             </Grid>
+
             <Grid item xs={12} sm={4}>
               <TextField
                 style={{ backgroundColor: "white" }}
@@ -116,6 +117,7 @@ export default function FullWidthGrid() {
                 // variant="outlined"
               />
             </Grid>
+
             <Grid item xs={12} sm={4}>
               <form className={classes.container} noValidate>
                 <TextField
@@ -131,6 +133,7 @@ export default function FullWidthGrid() {
                 />
               </form>
             </Grid>
+
             <Grid item xs={12} sm={4}>
               <FormControl style={{ color: "white" }} component="fieldset">
                 <FormLabel
@@ -146,7 +149,7 @@ export default function FullWidthGrid() {
                 <RadioGroup
                   aria-label="Pronoun"
                   name="Pronoun1"
-                  value={state.user.pronouns}
+                  // value={state.user.pronouns}
                   onChange={handleChange}
                 >
                   <FormControlLabel
@@ -172,6 +175,8 @@ export default function FullWidthGrid() {
                   />
                 </RadioGroup>
               </FormControl>
+              </Grid >
+
               <Grid item xs={12} sm={4}>
                 <FormControl
                   component="fieldset"
@@ -187,19 +192,20 @@ export default function FullWidthGrid() {
                   >
                     Activities
                   </FormLabel>
-                  <Grid item xs={12} sm={4}>
-              <TextField
-                style={{ backgroundColor: "white" }}
-                id="outlined-textarea"
-                label="Activity Goals"
-                placeholder="Get stronger!"
-                multiline
-                rows={4}
-                // variant="outlined"
-              />
-            </Grid>
+                 
+
+                    <TextField
+                      style={{ backgroundColor: "white" }}
+                      id="outlined-textarea"
+                      label="Activity Goals"
+                      placeholder="Get stronger!"
+                      multiline
+                      rows={4}
+                      // variant="outlined"
+                    />
                 </FormControl>
               </Grid>
+
               <Grid item xs={12} sm={4}>
                 <FormControl
                   component="fieldset"
@@ -253,6 +259,8 @@ export default function FullWidthGrid() {
                   </FormGroup>
                 </FormControl>
               </Grid>
+
+              <Grid item xs={12} sm={12}>
               <div className={classes.root}>
                 {" "}
                 <label
@@ -274,14 +282,15 @@ export default function FullWidthGrid() {
                   id="pwd"
                 />
               </div>
-              {/* <Grid item xs={6} sm={3}>a
-          </Grid> */}
+                  </Grid>
+              
               <Grid item xs={12} sm={12}>
                 <PhotoUpload />
               </Grid>
+
             </Grid>
-          </Grid>
         </div>
+
         <CardActions style={{ justifyContent: "center" }}>
           <Button
             className="btn"
@@ -309,7 +318,19 @@ export default function FullWidthGrid() {
           >
             Back to Profile Page
           </Button>
-          <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Encode Sans SC'}} size="lg" variant="contained" color="primary" onClick={checkData} >Check Data</Button>
+          <Button
+            className="btn"
+            style={{
+              backgroundColor: "rgba(233, 214, 107, 0.637)",
+              fontFamily: "Encode Sans SC",
+            }}
+            size="lg"
+            variant="contained"
+            color="primary"
+            onClick={checkData}
+          >
+            Check Data
+          </Button>
         </CardActions>
       </Container>
     </>
