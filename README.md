@@ -22,7 +22,7 @@
 
   `NPM` all dependencies: `Apollo Server client`, `Graphql`, `Express.js server`, `React`, `React-DOM`, `react bootstrap`, `geolocation-utils` and `dotenv`.</br>
 
-  Technologies: `MERN stack single-page application`, `Node.js and Express.js server`, `MongoDB and the Mongoose ODM for the database`, `queries and mutations for retrieving, adding, updating, and deleting data`, `Material UI`
+  Technologies: `MERN stack single-page application`, `Node.js`, `Express.js server`, `MongoDB and the Mongoose ODM for the database`, `queries and mutations for retrieving, adding, updating, and deleting data`, `Material UI`
  and `deployed using Heroku (with data)`.
 
   ## Usage
@@ -32,11 +32,9 @@
   ## Links and Screenshots
 
    ### Deployed Link
-
  [Deployed Link](https://intense-peak-98981.herokuapp.com/)
 
    ### Screenshots
-
 ![Mate1](https://user-images.githubusercontent.com/77940481/128371896-2f189b02-a2e8-4f7f-9bc9-af69a5daf267.JPG) 
 ![Mate2](https://user-images.githubusercontent.com/77940481/128371929-cee09477-c961-485a-a11b-7c966c74ac9e.JPG) 
 ![Mate3](https://user-images.githubusercontent.com/77940481/128371947-0b0ba769-0d71-463a-bf49-047d419242a7.JPG) 
@@ -69,26 +67,26 @@
   ## Acceptance Criteria and Project requirements:
   Our group will use everything we’ve learned throughout this course to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on data and user demand. This project will provide you with the best opportunity to demonstrate your problem-solving skills, which employers will want to see during interviews. Once again, the user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
 
-* Use React for the front end.
+  * Use React for the front end.
 
-* Use GraphQL with a Node.js and Express.js server.
+  * Use GraphQL with a Node.js and Express.js server.
 
-* Use MongoDB and the Mongoose ODM for the database.
+  * Use MongoDB and the Mongoose ODM for the database.
 
-* Use queries and mutations for retrieving, adding, updating, and deleting data.
+  * Use queries and mutations for retrieving, adding, updating, and deleting data.
 
-* Be deployed using Heroku (with data).
+  * Be deployed using Heroku (with data).
 
-* Have a polished UI.
+  * Have a polished UI.
 
-* Be responsive.
+  * Be responsive.
 
-* Be interactive (i.e., accept and respond to user input).
+  * Be interactive (i.e., accept and respond to user input).
 
-* Include authentication (JWT).
+  * Include authentication (JWT).
 
-* Protect sensitive API key information on the server.
+  * Protect sensitive API key information on the server.
 
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+  * Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
 
-* Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+  * Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
