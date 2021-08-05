@@ -12,9 +12,13 @@ import ProfilePic from '../components/ProfilePic'
 import BioSection from '../components/BioSection'
 import ActivitiesSection from '../components/ActivitiesSection'
 import Moreinfo from '../components/MoreInfo'
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PROFILE } from '../utils/queries';
+import { UPDATE_USER } from '../utils/mutations';
 import { numberFormat, calcAge } from '../utils/helpers';
+import { geolocated } from "react-geolocated";
+import { useState, useEffect } from 'react';
+import Location from '../components/Location'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,9 +50,6 @@ function FullWidthGrid() {
   const classes = useStyles();
   const { loading, data } = useQuery(QUERY_PROFILE);
   const profile = data?.user || {};
-  const checkData = () => {
-    console.log(profile);
-  }
   return (
     <Container maxWidth="md">
       <Container style={{fontSize: '60px'}}>
@@ -71,7 +72,7 @@ function FullWidthGrid() {
             {loading ? (
               <div>...Loading</div>
             ) : (
-          <BioSection bio={profile.bio ? (profile.bio) : (" ")} age={profile.birthday ? (calcAge(profile.birthday)) : (" ")} email={profile.email ? (profile.email) : (" ")} phone={profile.phoneNumber ? (numberFormat(profile.phoneNumber)) : (" ")} />
+          <BioSection bio={profile.bio ? (profile.bio) : (" ")} age={profile.birthday ? (profile.birthday) : (" ")} email={profile.email ? (profile.email) : (" ")} phone={profile.phoneNumber ? (numberFormat(profile.phoneNumber)) : (" ")} />
             )}
           </Grid>
           <Grid item xs={12} sm={6}>{loading ? (
@@ -87,7 +88,7 @@ function FullWidthGrid() {
       </div>
       <CardActions>
         <Button className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign:'center'}} size="lg" variant="contained" color="primary"  href="/updateProfile">Update Profile Information</Button>
-        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow'}} size="lg" variant="contained" color="primary" href="/matches">Find MuscleMates!</Button>
+        <Button  className="btn" style={{backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow'}} size="lg" variant="contained" color="primary" href='/matches' >Find MuscleMates!</Button>
       </CardActions>
     </Container>
   );

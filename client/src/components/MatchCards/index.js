@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     // width: "90%",
   },
 });
-export default function ImgMediaCard() {
+export default function ImgMediaCard({ users }) {
   const classes = useStyles();
   return (
       <div>
@@ -35,95 +35,24 @@ export default function ImgMediaCard() {
           </div>
         </Container>
     <Card className={classes.root} >
+      {users.map((user) => (
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="550"
-          image={pic2}
-          title="Contemplative Reptile"
-        />
         <CardContent  >
           <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
-            Jacob Black
+            {user.firstname} {user.lastname}
           </Typography>
           <Typography >
-            This is my bio, I like to do lift and do cardio. 
+            <h3>Bio</h3>
+            <p>{user.bio}</p>
+            <h3>Activities</h3>
+            <p>{user.activities}</p>
           </Typography>
+          <CardActions>
+      </CardActions>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }}>
-          More Info
-        </Button>
-      </CardActions>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="500"
-          image={pic3}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
-            Jacob Black
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            This is my bio, I like to do lift and do cardio. 
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }} >
-          More Info
-        </Button>
-      </CardActions>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="500"
-          image={pic4}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
-            Jacob Black
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            This is my bio, I like to do lift and do cardio. 
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }} >
-          More Info
-        </Button>
-      </CardActions>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="500"
-          image={pic5}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Arial Narrow', fontSize:'40px'}}>
-            Jacob Black
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            This is my bio, I like to do lift and do cardio. 
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="large"  style={{ backgroundColor: 'rgba(233, 214, 107, 0.637)', fontFamily: 'Arial Narrow', textAlign: 'center' }}>
-          More Info
-        </Button>
-      </CardActions>
-    </Card>
+      ))}
+         </Card>
     </div>
   );
 }

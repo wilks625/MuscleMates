@@ -8,7 +8,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import MatchCards from "../components/MatchCards"
+import MatchCards from "../components/MatchCards";
+import { useQuery } from '@apollo/client';
+import { QUERY_USERS } from '../utils/queries';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthGrid() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
+  const { loading, data } = useQuery(QUERY_USERS);
+  const profiles = data?.allUsers || [];
   return (
     <Container maxWidth="lg">
       <div className={classes.root}>
@@ -51,7 +53,13 @@ export default function FullWidthGrid() {
                 alignItems="center"
         >
                     <Grid xs={12}>
-                        <MatchCards />
+
+                      {loading ? (
+                        <div>...Loading Matches</div>
+                      ) : (
+                        <MatchCards users={profiles} />
+                      )
+                      }
                         </Grid>
         </Grid>
       <CardActions>
