@@ -80,9 +80,10 @@ export default function FullWidthGrid() {
           bio: formState.bio
         },
       });
-
+      alert("Success! Your Profile information has updated!")
       console.log("SUCCESS!!!");
     } catch (error) {
+      alert("There was a problem updating your profile, please try again later.")
       console.log("THERE WAS AN ERROR", error);
       console.log(JSON.stringify(error, null, 2));
     }

@@ -43,9 +43,6 @@ export default function FullWidthGrid() {
   const classes = useStyles();
   const { loading, data } = useQuery(QUERY_USERS);
   const profiles = data?.allUsers || [];
-  const checkData = () => {
-    console.log(profiles);
-  }
   return (
     <Container maxWidth="lg">
       <div className={classes.root}>
@@ -67,7 +64,6 @@ export default function FullWidthGrid() {
         </Grid>
       <CardActions>
         <Button size="small" variant="contained" color="primary" href="/userProfile">Back to Profile Page</Button>
-        <Button size="small" variant="contained" color="primary" onClick={checkData} >Check Data</Button>
       </CardActions>
     )
       </div>
